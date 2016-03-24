@@ -15,13 +15,8 @@ module.exports = {
     return {type: actions.SURVEYS_LOADED, surveys: surveys, entryIds: entryIds};
   },
   loadSurveys: function() {
-<<<<<<< cf8e06862f3b58ef445c1207bee0b13e09f7d005
-    return function() {
-      dispatch(module.exports.surveysLoading());
-=======
     return function(dispatch) {
       dispatch(surveysLoading());
->>>>>>> survey routes migration
       axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
       axios.get('/user/userData')
         .then(function(response) {

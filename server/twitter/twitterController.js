@@ -37,12 +37,14 @@ module.exports = {
       });
 
       tone_analyzer.tone({ text: tweetBlock },
+
         function(err, tone) {
           if (err)
             console.log(err);
           else
             res.send(JSON.stringify(tone['document_tone']));
       });
+
     });
   }
 };
