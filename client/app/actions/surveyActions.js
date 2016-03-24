@@ -47,7 +47,6 @@ module.exports = {
     return {type: actions.MOOD_ELABORATE_CHANGE, moodDetail: moodDetail};
   },
   submitSurvey: function(survey) {
-    axios.defaults.headers.common['x-access-token'] = window.localStorage.getItem('x-access-token');
     return function(dispatch) {
       dispatch(module.exports.surveySubmit());
       axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
