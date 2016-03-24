@@ -7,25 +7,69 @@ var dotenv = require('dotenv').config();
 var AlchemyAPI = require('../alchemyapi');
 var alchemyapi = new AlchemyAPI();
 
-var alchemyTextCalls = function (userText) {
-  alchemyapi.sentiment('text', userText, {}, function(response){
-    console.log(JSON.stringify(response, null, 4));
-  })
-  alchemyapi.concepts('text', userText, {}, function(response){
-    console.log(JSON.stringify(response), null, 4);
-  })
-   alchemyapi.keywords('text', userText, { 'sentiment':1 }, function(response){
-    console.log(JSON.stringify(response), null, 4);
-  })
-};
+
 
 module.exports = {
-  surveyTest: function(req, res) {
+  surveyTest: function(req, res, next) {
     console.log(req.headers);
     res.send({test: 'Feelings noted!'});
   },
 
+  postAlchemyResults: function(req, res, next) {
+    var output = {};
+
+    function moodSentiment(req, res, output){
+      alchemyapi.sentiment('text', req.body.moodElaborate, {}, function(response){
+        output['moodSentiments'] = response;
+        moodKeywords(req, res, output)
+      });
+    }
+
+    function moodKeywords(req, res, output){
+      alchemyapi.keywords('text', req.body.moodElaborate, { 'sentiment':1 }, function(response){
+        output['moodKeywords'] = response;
+        sleepSentiment(req, res, output);
+      });
+    }
+
+    function sleepSentiment(req, res, output){
+      alchemyapi.sentiment('text', req.body.sleepElaborate, {}, function(response){
+        output['sleepSentiments'] = response;
+        sleepKeywords(req, res, output)
+      });
+    }
+
+    function sleepKeywords(req, res, output){
+      alchemyapi.keywords('text', req.body.sleepElaborate, { 'sentiment':1 }, function(response){
+        output['sleepKeywords'] = response;
+        eventSentiment(req, res, output);
+      });
+    }
+
+    function eventSentiment(req, res, output){
+      alchemyapi.sentiment('text', req.body.eventElaborate, {}, function(response){
+        output['eventSentiments'] = response;
+        eventKeywords(req, res, output)
+      });
+    }
+
+    function eventKeywords(req, res, output){
+      alchemyapi.keywords('text', req.body.eventElaborate, { 'sentiment':1 }, function(response){
+        output['eventKeywords'] = response;
+        // console.log("IM HERE", output)
+        // res.send(req.body.output);
+        req.body.output = JSON.stringify(output);
+        next();
+      });
+    }
+
+    moodSentiment(req, res, output)
+
+    // sentiment(req, res, output);
+  },
+
   postUserSurvey: function(req,res,next) {
+    // console.log('HIHIHIHIHI', req.body);
     var token = req.headers['x-access-token'];
     if (!token) {
       next(new Error('Token not found while trying to post to survey'));
@@ -43,9 +87,13 @@ module.exports = {
           }
           console.log('DISDASURVEY', survey);
 
-          alchemyTextCalls(survey.sleepElaborate);
-          alchemyTextCalls(survey.eventElaborate);
-          alchemyTextCalls(survey.moodElaborate);
+          var parsed = JSON.parse(req.body.output);
+
+          var eventData = {sentiment: parsed.eventSentiments, keywords: parsed.eventKeywords};
+          var sleepData = {sentiment: parsed.sleepSentiments, keywords: parsed.sleepKeywords};
+          var moodData = {sentiment: parsed.moodSentiments, keywords: parsed.moodKeywords};
+
+          console.log('HALLLOOOOO',parsed.moodKeywords);
 
           foundUser.surveys.push(survey);
           foundUser.save()
