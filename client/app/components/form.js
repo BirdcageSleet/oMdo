@@ -9,7 +9,7 @@ function Form (props) {
       <div className={props.formClassName || ''}>
         <form>
           {props.children}
-          <button className={props.buttonClassName || ''} onClick={props.onSubmit}>{props.text}</button>
+          <div className={props.buttonClassName || ''} onClick={props.onSubmit}>{props.text}</div>
         </form>
         {
             props.pathname === '/signin' ?
