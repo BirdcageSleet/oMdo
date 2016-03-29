@@ -64,10 +64,8 @@
     "request": "^2.69.0",
     "style-loader": "^0.13.0",
     "twitter": "^1.2.5",
-<<<<<<< 217b015891b3e930bea6956c6cbba3066a71abbf
     "unirest": "^0.4.2",
-=======
->>>>>>> added watson developer to package json. updated survey for new api integration. updated twitter controller for watson integration
+    "url-loader": "^0.5.7",
     "watson-developer-cloud": "^1.3.3",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.5.1",
