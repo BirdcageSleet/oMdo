@@ -99,3 +99,7 @@ textarea:focus {
   margin: 0 5px;
   display: inline-block;
 }
+
+.journalList {
+  text-align: left;
+}

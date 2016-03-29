@@ -30,5 +30,26 @@ module.exports = {
           dispatch(module.exports.surveysNotLoaded());
         });
     };
+  },
+  addSleepNote: function(note) {
+    return {type: actions.SLEEP_NOTE, sleepNote: note};
+  },
+  addMoodNote: function(note) {
+    return {type: actions.MOOD_NOTE, moodNote: note};
+  },
+  addEventNote: function(note) {
+    return {type: actions.EVENT_NOTE, eventNote: note};
+  },
+  addNotes: function(notes) {
+    return function(dispatch) {
+      axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
+      axios.put('/user/userData', notes)
+        .then(function(response) {
+          console.log('addNotes success ', response);
+        })
+        .catch(function(error) {
+          console.log('addNotes error', error);
+        });
+    };
   }
 };

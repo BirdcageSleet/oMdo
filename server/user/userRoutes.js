@@ -8,5 +8,6 @@ app.post('/signUp', userController.signUp);
 app.get('/signedIn', userController.checkAuth);
 app.get('/userData', userController.getUserSurveys);
 app.post('/userData', userController.postUserSurvey);
+app.put('/userData', userController.addNotes);
 
 module.exports = app;
