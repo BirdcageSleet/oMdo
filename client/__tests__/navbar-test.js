@@ -1,4 +1,4 @@
-jest.unmock('../app/components/navbar.js');
+jest.unmock('../app/components/mainNavbar.js');
 
 describe('Navbar', function() {
   var React = require('react');
@@ -9,7 +9,7 @@ describe('Navbar', function() {
 
   var Navbar;
   beforeEach(function() {
-    Navbar = require('../app/components/navbar');
+    Navbar = require('../app/components/mainNavbar');
   });
 
   it('should exist', function() {

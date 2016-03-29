@@ -28,8 +28,3 @@ describe('Home', function(){
     expect(TestUtils.isDOMComponent(home)).toBeTruthy();
   });
 });
-
-
-
-
-

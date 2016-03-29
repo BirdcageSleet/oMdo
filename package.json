@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "jest;mocha server/spec/*;mocha client/spec/*.js"
+    "test": "webpack --config webpack.test.config.js && jest client/__test_bundle__/*.js;mocha server/spec/*;mocha client/spec/*.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,11 @@
   },
   "homepage": "https://github.com/BirdcageSleet/skynet#readme",
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "preprocessorIgnorePatterns": [
-      "<rootDir>/client/app/styles"
+    "testPathDirs": [
+      "<rootDir>/client/__test_bundle__"
     ],
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "moduleLoader": "<rootDir>/node_modules/jestpack/ModuleLoader",
     "testFileExtensions": [
       "js",
       "es6"
@@ -31,6 +32,7 @@
       "es6"
     ],
     "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/css-loader",
       "react",
       "react-dom",
       "react-addons-test-utils"
@@ -82,10 +84,12 @@
     "chai": "^3.5.0",
     "jest": "^0.1.40",
     "jest-cli": "^0.9.2",
+    "jestpack": "^0.2.0",
     "mocha": "^2.4.5",
     "mockgoose": "^5.4.0-rc.1",
     "nock": "^7.2.2",
     "react-addons-test-utils": "^0.14.7",
+    "stats-webpack-plugin": "^0.3.1",
     "supertest": "^1.2.0"
   }
 }

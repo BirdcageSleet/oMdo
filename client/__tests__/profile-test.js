@@ -1,10 +1,12 @@
-jest.unmock('../app/components/profile.js');
+var Profile = require('../app/components/profile/profile');
+console.log(Profile)
+jest.unmock('../app/components/profile/profile.js');
 
 describe('Profile', function() {
   var React = require('react');
   var ReactDom = require('react-dom');
   var TestUtils = require('react-addons-test-utils');
-  var Profile = require('../app/components/profile');
+  var Profile = require('../app/components/profile/profile');
   var props, renderer, output, result;
 
   beforeEach(function() {
