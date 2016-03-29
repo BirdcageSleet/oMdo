@@ -68,6 +68,6 @@ form {
   width: 90%;
 }
 
-.authReroute > h3 > span{
+h3.authReroute {
   color: #ffffff;
 }
