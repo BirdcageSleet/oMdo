@@ -4,73 +4,61 @@ var css = require('../../styles/tile.css');
 var Tile = require('../tile');
 var Form = require('../form');
 
-function dateFormat(date) {
-  var output = '';
-  output += date.getMonth() + 1 + '/';
-  output += date.getDate() + '/';
-  output += date.getFullYear();
-  return output;
-}
-
 function JournalEntry(props) {
-  console.log('journal entry props ', props);
   return (
     <Tile>
-      <h2>{props.entry.createdOn.slice(0,10)}</h2>
+      <h2>{new Date(props.entry.createdOn).toLocaleString()}</h2>
         <ul className={props.css.journalList}>
           <li>
             <h3>How were you feeling?</h3>
-            <p>You gave yourself a rating of {props.entry.feeling} out of 5.</p>
+            <p>On a scale of 1 to 5, where 1 is depressed and 5 is overjoyed, 
+            your feeling rating was {props.entry.feeling}.</p>
           </li>
           <li>
-            <h3>What was your anxiety?</h3>
-            <p>You said your anxiety level was a {props.entry.anxiety} out of 5.</p>
+            <h3>What was your anxiety level?</h3>
+            <p>On a scale of 1 to 5, where 1 is panicky and 5 is not at all anxious, you rated 
+            your anxiety level a {props.entry.anxiety}.</p>
           </li>
           <li>
             <h3>What was your energy level?</h3>
-            <p>You said your energy level was a {props.entry.energy} out of 5.</p>
+            <p>On a scale of 1 to 5, where 1 is falling asleep and 5 is alert and awake, you rated your
+             energy level a {props.entry.energy}.</p>
           </li>
           <li>
             <h3>How did you sleep?</h3>
-            <p>{props.entry.sleep}</p>
+            <p>
+              {props.entry.sleep === 1 ? 'Insomnia' : ''}
+              {props.entry.sleep === 2 ? 'Tossed and turned' : ''}
+              {props.entry.sleep === 3 ? 'Normally' : ''}
+              {props.entry.sleep === 4 ? 'Pretty well' : ''}
+              {props.entry.sleep === 5 ? 'Very restful' : ''}
+            </p>
           </li>
           <li>
             <h3>This is what you said about your sleep.</h3>
             <p>{props.entry.sleepElaborate}</p>
-            <Form onSubmit={props.onSubmitNote} text='Add Note'>
-              <input
-                type='text'
-                onChange={props.onSleepNote}
-              />
-            </Form>
           </li>
           <li>
             <h3>How was your mood?</h3>
-            <p>You described your mood as {props.entry.mood}.</p>
+            <p>
+              {props.entry.mood === 1 ? 'Sad' : ''}
+              {props.entry.mood === 2 ? 'Aggravated' : ''}
+              {props.entry.mood === 3 ? 'Normal' : ''}
+              {props.entry.mood === 4 ? 'Agreeable' : ''}
+              {props.entry.mood === 5 ? 'High spirits' : ''}
+              </p>
           </li>
           <li>
             <h3>Here's what you said about your mood.</h3>
             <p>{props.entry.moodElaborate}</p>
-            <Form onSubmit={props.onSubmitNote} text='Add Note'>
-              <input
-                type='text'
-                onChange={props.onMoodNote}
-              />
-            </Form>
           </li>
           <li>
             <h3>Had there been any major events since your last check-in?</h3>
-            <p>You said {props.entry.majorEvent ? 'Yes' : 'No'}</p>
+            <p>{props.entry.majorEvent ? 'Yes' : 'No'}</p>
           </li>
           <li>
             <h3>Here's what you said about this event.</h3>
             <p>{props.entry.eventElaborate}</p>
-            <Form onSubmit={props.onSubmitNote} text='Add Note'>
-              <input
-                type='text'
-                onChange={props.onEventNote}
-              />
-            </Form>
           </li>
         </ul>
     </Tile>
