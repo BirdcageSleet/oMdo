@@ -17,17 +17,16 @@
   margin-left: 5%;
   color: white;
   font-size: 20px;
-  color: #283D3B;
-  background-color: white;
+  color: #586994;
+  background-color: #7A9E9F;
   cursor: pointer;
 }
 
 .submit:hover {
-  background-color: #EDDDD4;
-  color: #424B54;
+  background-color: #B8D8D8;
 }
 
-.label {
+/*.label {
   color: #ED6A5;
   border: visible;
   border-width: 1px;
@@ -35,7 +34,7 @@
   border-radius: 15px;
   color: #424B54;
   background-color: #fff;
-}
+}*/
 
 .form {
   position: absolute;
@@ -67,4 +66,8 @@ form {
   padding: 3px 3px;
   margin: 5px;
   width: 90%;
+}
+
+.authReroute > h3 > span{
+  color: #ffffff;
 }
