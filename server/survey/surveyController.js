@@ -1,5 +1,6 @@
 var User = require('../db/models/userSchema.js');
 var Survey = require('../db/models/surveySchema.js');
+var Keyword = require('../db/models/keywordSchema.js');
 var jwt = require('jwt-simple');
 var Q = require('q');
 var mongoose = require('mongoose');
@@ -64,13 +65,12 @@ module.exports = {
     }
 
     moodSentiment(req, res, output)
-
-    // sentiment(req, res, output);
   },
 
   postUserSurvey: function(req,res,next) {
     // console.log('HIHIHIHIHI', req.body);
     var token = req.headers['x-access-token'];
+    var create = Q.nbind(Keyword.create, Keyword);
     if (!token) {
       next(new Error('Token not found while trying to post to survey'));
       }
@@ -86,14 +86,43 @@ module.exports = {
             next(new Error('There is an error in posting the survey: ', err));
           }
           console.log('DISDASURVEY', survey);
+          console.log('DISDAUSER', foundUser);
 
           var parsed = JSON.parse(req.body.output);
-
           var eventData = {sentiment: parsed.eventSentiments, keywords: parsed.eventKeywords};
           var sleepData = {sentiment: parsed.sleepSentiments, keywords: parsed.sleepKeywords};
-          var moodData = {sentiment: parsed.moodSentiments, keywords: parsed.moodKeywords};
+          var moodData = {sentiment: parsed.moodSentiments, keywords: parsed.moodKeywords.keywords};
+          var newKeyword; 
 
-          console.log('HALLLOOOOO',parsed.moodKeywords);
+          // console.log(parsed.eventKeywords.keywords);
+
+          parsed.eventKeywords.keywords.forEach(function (aKeyword) {
+            Keyword.findOne({keyword: aKeyword.text})
+              .then(function (foundKeyword) {
+                var score = Number(aKeyword.sentiment.score);
+                console.log('Scores ', score);
+                console.log('Score stuff ', typeof score);
+                if (!foundKeyword) {
+                  newKeyword = {
+                    keyword: aKeyword.text,
+                    userScore: [0],
+                    omdoScores: [score],
+                    relevance: [aKeyword.relevance],
+                    field: 'Event',
+                    surveyDate: new Date(),
+                    user: foundUser
+                  }
+                  return create(newKeyword)
+                } else {
+                  console.log('im found',foundKeyword);
+                }
+
+                
+
+              });
+          })
+
+          console.log('HALLLOOOOO', JSON.stringify(moodData.keywords));
 
           foundUser.surveys.push(survey);
           foundUser.save()
