@@ -24,7 +24,7 @@ module.exports = function(data){
     for (var k = 0; k < relevantLabels.length; k++) {
       var field = relevantLabels[k];
       dataPlots[i].push(data[i][field] *10);
-      dates.push(data[i].createdOn.substr(0,10));
+      dates.push(new Date (data[i].createdOn).toLocaleString());
     }
     setsToGo -= 1;
     i -= 1;
