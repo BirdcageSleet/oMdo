@@ -24,6 +24,9 @@ client/.DS_Store
 # Assets
 **/.dropbox
 
+# bundled tests
+__test_bundle__/
+
 # Floobits related stuff
 .floo
 .flooignore
