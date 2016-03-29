@@ -9,7 +9,6 @@ function DiaryEntry (props) {
       return (<div><h2>You'll need to submit a survey before you can reflect on your recent entries.</h2></div>)
     } else {
   return (
-
     <div className={props.css.root}>
       <h3> Here are the results from your last seven surveys.</h3>
       <p>    In this representation, you are striving to have the entirety of the graph filled in. This represents having a great mood, sleeping well, having low anxiety and high energy, and feeling positive. <br />
