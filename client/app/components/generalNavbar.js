@@ -10,10 +10,12 @@ function GeneralNav (props) {
       {props.children.map(function(child, i) {
         return (
           <div key={(i + 1)*10}>
-            className={props.css.navItem}
-            onClick={props.handlers[i]}
-            
-            {child.props.text || 'Checkout item ' + i}
+            <div
+              className={props.css.navItem}
+              onClick={props.handlers[i]}
+            >
+              {child.props.text || 'Checkout item ' + i}
+            </div>
           </div>
         )
       })}
