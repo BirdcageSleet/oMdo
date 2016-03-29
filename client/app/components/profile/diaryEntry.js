@@ -13,6 +13,7 @@ function DiaryEntry (props) {
     <li className={props.css.root}>
       <Radar
         data={format(props.data)}
+        redraw
         options={{
           scaleOverride: true,
           scaleSteps: 5,
