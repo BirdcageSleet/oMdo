@@ -1,0 +1,14 @@
+machine:
+  ruby:
+    version: 2.1.5
+  node:
+    version: 5.8.0
+test:
+  pre:
+    - webpack
+deployment:
+  production:
+    branch: master
+    commands:
+      - gem install capistrano
+      - cap production deploy

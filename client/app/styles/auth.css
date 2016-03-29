@@ -1,0 +1,74 @@
+@import "./config.css";
+
+.root {
+  background-image: url('../../assets/beachfog.jpg');
+  background-size: cover;
+  padding: 10% 25% 25% 25%;
+  height: 85%;
+  width: 100%;
+}
+
+.root img {
+
+}
+
+.submit {
+  width: 70%;
+  font-weight: 10;
+  font-size: 2%;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  font-size: 20px;
+  color: #283D3B;
+  background-color: white;
+  border: visible;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 15px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #EDDDD4;
+  color: #424B54;
+}
+
+.label {
+  color: #ED6A5;
+  border: visible;
+  border-width: 1px;
+  border-color: #283D3B;
+  border-radius: 15px;
+  color: #424B54;
+  background-color: #fff;
+}
+
+.form {
+  box-shadow: 5px 4px 5px #574A40;
+  border-style: solid;
+  opacity: 1;
+  background-color: #5CA4A9;
+  border-radius: 15px;
+  border: visible;
+  border-width: 2px;
+  border-color: white;
+  padding: 15px;
+  margin: 10% 25%;
+}
+
+form {
+  padding: 0;
+  margin: 0;
+}
+
+.input {
+  border-style: solid;
+  border: none;
+  border-width: 1px;
+  border-color: #283D3B;
+  padding: 3px 3px;
+  margin: 5px;
+  width: 100%;
+}

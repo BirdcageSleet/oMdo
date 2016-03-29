@@ -5,5 +5,28 @@ bower_components/
 build/
 dist/
 
+# forever pids
+server/pid
+
+# quote data
+**/quote.json
+
+# keys
+api_key.txt
+server/api_key.txt
+
 # Environment stuff
 .env
+node-upstart-script.conf
+.DS_Store
+client/.DS_Store
+
+# Assets
+**/.dropbox
+
+# Floobits related stuff
+.floo
+.flooignore
+
+# Anything AWS related
+.elasticbeanstalk/
