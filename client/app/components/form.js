@@ -13,15 +13,15 @@ function Form (props) {
         </form>
         {
             props.pathname === '/signin' ?
-                <div className="authReroute">
-                    <h3>New User? <Link to='/signup'>Sign Up Here</Link></h3>
+                <div>
+                    <h3 className="authReroute">New User? <Link to='/signup'>Sign Up Here</Link></h3>
                 </div>
             : null
         }
         {
             props.pathname === '/signup' ?
-                <div className="authReroute">
-                    <h3>Already signed up? <Link to='/signin'>Sign In Here</Link></h3>
+                <div>
+                    <h3 className="authReroute">Already signed up? <Link to='/signin'>Sign In Here</Link></h3>
                 </div>
             : null
         }
