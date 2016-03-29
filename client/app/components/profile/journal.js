@@ -6,15 +6,11 @@ var css = require('../../styles/tile.css');
 function Journal(props) {
   return(
     <div>
-      {props.entries.map(function(entry, i) {
+      {props.entries.reverse().map(function(entry, i) {
         return (
           <JournalEntry
             entry={entry}
             key={i}
-            onSubmitNote={props.onSubmitNote}
-            onSleepNote={props.onSleepNote}
-            onMoodNote={props.onMoodNote}
-            onEventNote={props.onEventNote}
           />
         )
       })}

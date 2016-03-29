@@ -26,10 +26,7 @@ var SurveySchema = new mongoose.Schema({
   createdOn: {
     type: Date,
     default: Date.now
-  },
-  sleepNote: String,
-  moodNote: String,
-  eventNote: String
+  }
 });
 
 SurveySchema.plugin(autoIncrement.plugin, {model:'Survey', field:'surveyId'});

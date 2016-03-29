@@ -160,22 +160,5 @@ module.exports = {
           res.sendStatus(500);
         }
       });
-    },
-
-    addNotes: function(req, res) {
-      var token = req.headers['x-access-token'];
-      if (!token) {
-        next(new Error('No token found!'));
-      } else {
-        var user = jwt.decode(token, process.env.JWT_SECRET);
-        User.findOne({username: user.username})
-        .populate('surveys')
-        .then(function(surveys) {
-          console.log(surveys);
-        })
-        .catch(function(error) {
-          next(new Error(error));
-        });
-      }
     }
 };

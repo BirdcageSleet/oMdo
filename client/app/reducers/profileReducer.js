@@ -3,10 +3,7 @@ var actions = require('../actions/actions');
 var initialState = {
   surveys: [],
   viz: undefined,
-  isLoading: true,
-  sleepNote: '',
-  moodNote: '',
-  eventNote: ''
+  isLoading: true
 };
 
 function profileReducer(state, action) {
@@ -27,21 +24,9 @@ function profileReducer(state, action) {
       return Object.assign({}, state, {
         isLoading: true
       });
-    case actions.SLEEP_NOTE:
-      return Object.assign({}, state, {
-        sleepNote: action.sleepNote
-      });
-    case actions.MOOD_NOTE:
-      return Object.assign({}, state, {
-        moodNote: action.moodNote
-      });
-    case actions.EVENT_NOTE:
-      return Object.assign({}, state, {
-        eventNote: action.eventNote
-      });
     default:
       return state;
   }
-};
+}
 
 module.exports = profileReducer;
