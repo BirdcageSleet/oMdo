@@ -9,7 +9,7 @@ function GeneralNav (props) {
     <Frame className={props.css.nav}>
       {props.children.map(function(child, i) {
         return (
-          <div key={(i+ 1) * 10} >
+          <div key={(i + 1)*10}>
             <button
               className={props.css.navItem}
               onClick={props.handlers[i]}
