@@ -138,9 +138,9 @@ module.exports = {
           if (err) {
             next(new Error('There is an error in posting the survey: ', err));
           }
-          alchemyapi.sentiment('text', survey.eventElaborate, {}, function(response){
-            // console.log(JSON.stringify(response, null, 4));
-          })
+          // alchemyapi.sentiment('text', survey.eventElaborate, {}, function(response){
+          //   // console.log(JSON.stringify(response, null, 4));
+          // })
           foundUser.surveys.push(survey);
           foundUser.save()
             .then(function(result) {
@@ -160,5 +160,22 @@ module.exports = {
           res.sendStatus(500);
         }
       });
+    },
+
+    addNotes: function(req, res) {
+      var token = req.headers['x-access-token'];
+      if (!token) {
+        next(new Error('No token found!'));
+      } else {
+        var user = jwt.decode(token, process.env.JWT_SECRET);
+        User.findOne({username: user.username})
+        .populate('surveys')
+        .then(function(surveys) {
+          console.log(surveys);
+        })
+        .catch(function(error) {
+          next(new Error(error));
+        });
+      }
     }
 };
