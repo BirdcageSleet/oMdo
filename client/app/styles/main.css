@@ -4,11 +4,9 @@
 html {
   text-align: center;
   font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", sans-serif;
-  font-size: 20px;
-  font-weight: 200;
-  color: white;
+  
   line-height: 1.4em;
-  background-color: #E6EBE0;
+  background-color: #586994;
 }
 
 body {
@@ -76,12 +74,12 @@ input[type=range]::-webkit-slider-thumb {
   float: right;
 }
 
-.form {
+/*.form {
   background: transparent;
   color: #283D3B;
   padding: 0;
   width: 100%;
-}
+}*/
 
 .form button {
   box-shadow: 5px 4px 5px #424B54;
