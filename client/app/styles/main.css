@@ -1,12 +1,17 @@
 * {
   box-sizing: border-box;
 }
+
+/*@font-face {
+  font-family: 'raleway light';
+  url('./fonts/Raleway-Light.tff');
+}*/
+
 html {
 /*  text-align: left;
-*/  font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", sans-serif;
-  
+*/  font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", sans-serif;  
   line-height: 1.4em;
-  background-color: #586994;
+  background-color: white;
 }
 
 body {

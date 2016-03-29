@@ -21,7 +21,8 @@ module.exports = {
     loaders: [
       {test: /\.(jpe?g|svg|ico|png|gif)$/, include: /assets/, loader: 'file-loader?name=[hash:6].[ext]'},
       {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-      {test: /\.css$/, loaders: ['style', 'css?modules&localIdentName=[local]---[hash:base64:5]', 'cssnext']}
+      {test: /\.css$/, loaders: ['style', 'css?modules&localIdentName=[local]---[hash:base64:5]', 'cssnext']},
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   plugins: [
