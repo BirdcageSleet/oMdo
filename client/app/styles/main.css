@@ -2,14 +2,8 @@
   box-sizing: border-box;
 }
 
-/*@font-face {
-  font-family: 'raleway light';
-  url('./fonts/Raleway-Light.tff');
-}*/
-
 html {
-/*  text-align: left;
-*/  font-family: "Quicksand", sans-serif;  
+  font-family: "Quicksand", sans-serif;
   line-height: 1.4em;
   background-color: #eaeced;
   text-align: center;
@@ -121,6 +115,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 /*h3.authReroute > span{
   color: #ffffff;
+<<<<<<< 1a6500c3e2770d5f69e1a687840ce32c84a40020
 }
 
 .authLink {

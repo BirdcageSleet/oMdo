@@ -19,7 +19,7 @@ var customStyles = {
 
 
 var QuotePopUp = React.createClass({
-  
+
   render: function() {
     return (
       <div>

@@ -24,7 +24,7 @@
 }
 
 button {
-  
+
   margin-bottom: 30px;
   font-size: 20px;
   padding: 10px 10px;
@@ -114,10 +114,6 @@ textarea:focus {
   text-align: left;
 }
 
-.radarChart {
-}
-
 .summaryText {
   text-align: left;
 }
-
