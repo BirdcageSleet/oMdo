@@ -15,10 +15,10 @@ var HomeContainer = React.createClass({
   render: function() {
     var pathname = this.props.location.pathname;
     return (
-      <Container>
-        <Greeting text='oMdo Welcomes You' username={this.props.username} location={this.props.location.pathname} />
+      <div>
         <QuotePopUp text='Tips!' {...this.props} />
-      </Container>
+        <Greeting text='oMdo Welcomes You' username={this.props.username} location={this.props.location.pathname} />
+      </div>
     )
   }
 });
