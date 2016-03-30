@@ -3,7 +3,8 @@ var actions = require('../actions/actions');
 var initialState = {
   surveys: [],
   viz: undefined,
-  isLoading: true
+  isLoading: true,
+  entryIds: {}
 };
 
 function profileReducer(state, action) {
@@ -14,7 +15,8 @@ function profileReducer(state, action) {
     case actions.SURVEYS_LOADED:
       return Object.assign({}, state, {
         isLoading: false,
-        surveys: action.surveys
+        surveys: action.surveys,
+        entryIds: action.entryIds
       });
     case actions.SURVEYS_NOT_LOADED:
       return Object.assign({}, state, {
@@ -24,6 +26,12 @@ function profileReducer(state, action) {
       return Object.assign({}, state, {
         isLoading: true
       });
+    case actions.OPEN_DIARY:
+      return Object.assign({}, state, 
+        state.entryIds[action.id] = true);
+    case actions.CLOSE_DIARY:
+      return Object.assign({}, state,
+        state.entryIds[action.id] = false);
     default:
       return state;
   }

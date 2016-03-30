@@ -19,7 +19,16 @@ var ProfileContainer = React.createClass({
     this.props.actions.checkAuth();
     this.props.actions.loadSurveys();
   },
+  handleRevealDiary: function(id) {
+    console.log('checking entry ids ', this.props.entryIds[id]);
+    if(this.props.entryIds[id]) {
+      this.props.actions.closeDiary(id);
+    } else {
+      this.props.actions.openDiary(id);
+    }
+  },
   render: function() {
+    console.log('profile container props ', this.props);
     return (
       <div>
         <Greeting username={this.props.username} />
@@ -28,6 +37,8 @@ var ProfileContainer = React.createClass({
           <Diary text='Check Out All Your Data' surveys={this.props.surveys} />
           <Journal 
             entries={this.props.surveys}
+            entryIds={this.props.entryIds}
+            onRevealDiary={this.handleRevealDiary}
           />
         </Container>
       </div>
@@ -40,7 +51,8 @@ function mapStateToProps(state, ownProps) {
     username: state.authReducer.username,
     surveys: state.profileReducer.surveys,
     isLoading: state.profileReducer.isLoading,
-    isLoggedIn: state.authReducer.isLoggedIn
+    isLoggedIn: state.authReducer.isLoggedIn,
+    entryIds: state.profileReducer.entryIds
   }
 };
 
