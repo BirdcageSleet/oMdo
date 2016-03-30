@@ -24,7 +24,7 @@ namespace :deploy do
   desc "CP .env to skynet directory"
   task :dotenv do
     on roles(:app) do
-      execute "cp ~/.env #{current_path}"
+      execute "cp ~/.env #{current_path}/current"
     end
   end
 
