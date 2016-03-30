@@ -25,7 +25,7 @@ client/.DS_Store
 **/.dropbox
 
 # bundled tests
-__test_bundle__/
+__bundled_tests__/
 
 # Floobits related stuff
 .floo
