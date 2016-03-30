@@ -90,6 +90,7 @@ var ProfileContainer = React.createClass({
         </Container>
       </div>
     )
+<<<<<<< 0d464154dbe99bf1e630ce7783797077853351ec
 if(this.props.location.pathname === 'summary') {
       return (<div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>)
     } else if(this.props.location.pathname === 'journal') {
@@ -99,6 +100,13 @@ if(this.props.location.pathname === 'summary') {
           /></div>)
     }  
   
+=======
+  }
+});
+{/*
+  <Greeting username={this.props.username} />
+  <Visualization text='See Your Last 7 Days'/>
+>>>>>>> Continue style implementation
 */}
 
 function mapStateToProps(state, ownProps) {
