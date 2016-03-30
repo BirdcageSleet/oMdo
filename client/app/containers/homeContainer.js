@@ -13,7 +13,6 @@ var HomeContainer = React.createClass({
     this.props.actions.fetchQuote();
   },
   render: function() {
-    var pathname = this.props.location.pathname;
     return (
       <div>
         <QuotePopUp text='Tips!' {...this.props} />
