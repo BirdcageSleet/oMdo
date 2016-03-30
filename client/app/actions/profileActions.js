@@ -21,11 +21,22 @@ module.exports = {
           if (graphData.length > 7) {
             graphData = graphData.slice(graphData.length-7);
           }
-          dispatch(module.exports.surveysLoaded(graphData));
+          var entryIds = {};
+          response.data.forEach(function(entry) {
+            entryIds[entry._id] = false;
+          });
+          console.log('loading the surveys ', entryIds);
+          dispatch(module.exports.surveysLoaded(graphData, entryIds));
         })
         .catch(function(error) {
           dispatch(module.exports.surveysNotLoaded());
         });
     };
+  },
+  openDiary: function(id) {
+    return {type: actions.OPEN_DIARY, id: id};
+  },
+  closeDiary: function(id) {
+    return {type: actions.CLOSE_DIARY, id: id};
   }
 };
