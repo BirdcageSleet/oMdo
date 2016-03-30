@@ -42,6 +42,12 @@ function profileReducer(state, action) {
     // case actions.CLOSE_DIARY:
     //   return Object.assign({}, state,
     //     state.entryIds[action.id] = false);
+    case actions.OPEN_DIARY:
+      return Object.assign({}, state, 
+        state.entryIds[action.id] = true);
+    case actions.CLOSE_DIARY:
+      return Object.assign({}, state,
+        state.entryIds[action.id] = false);
     default:
       return state;
   }

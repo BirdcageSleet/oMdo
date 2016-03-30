@@ -23,6 +23,8 @@ function Journal(props) {
   );
 }
 
+module.exports = styleable(css)(Journal);
+
 // function Journal(props) {
 //   console.log('journal children ', this.props);
 //   return(
@@ -41,7 +43,7 @@ function Journal(props) {
 //   );
 // }
 
-module.exports = styleable(css)(Journal);
+
 
 {/*diaryOpen={props.diaryOpen}*/}
 

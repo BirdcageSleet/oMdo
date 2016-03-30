@@ -74,40 +74,6 @@ var ProfileContainer = React.createClass({
     )
   }
 });
-{/*
-  <Greeting username={this.props.username} />
-  <Visualization text='See Your Last 7 Days'/>
-  return (
-      <div>
-        <Container>
-          <Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} />
-          <Journal 
-            entries={this.props.surveys}
-            onRevealDiary={this.handleRevealDiary}
-            hideEntry={this.hideEntry}
-            text='Reflect on Your Entries'
-          />
-        </Container>
-      </div>
-    )
-<<<<<<< 0d464154dbe99bf1e630ce7783797077853351ec
-if(this.props.location.pathname === 'summary') {
-      return (<div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>)
-    } else if(this.props.location.pathname === 'journal') {
-      return (<div><Journal 
-            entries={this.props.surveys}
-            text='Reflect on Your Entries'
-          /></div>)
-    }  
-  
-=======
-  }
-});
-{/*
-  <Greeting username={this.props.username} />
-  <Visualization text='See Your Last 7 Days'/>
->>>>>>> Continue style implementation
-*/}
 
 function mapStateToProps(state, ownProps) {
   return {
@@ -117,7 +83,6 @@ function mapStateToProps(state, ownProps) {
     isLoggedIn: state.authReducer.isLoggedIn
     // diaryOpen: state.profileReducer.diaryOpen
     // entryIds: state.profileReducer.entryIds
-    
   }
 };
 

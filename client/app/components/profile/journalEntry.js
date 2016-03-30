@@ -9,7 +9,6 @@ var Form = require('../form');
 var hideEntry = true;
 
 function JournalEntry(props) {
-    console.log('hideEntry ', props.hideEntry);
     return (
       <Tile>
           <h2 onClick={props.onRevealDiary}>{new Date(props.entry.createdOn).toLocaleString()}</h2>
@@ -95,21 +94,3 @@ function JournalEntry(props) {
 
 module.exports = styleable(css)(JournalEntry);
     
-    {/*console.log('calling journal entry again ', hideEntry);
-  if(hideEntry === true) {
-    return (
-        <Tile>
-          <h2 onClick={function(){
-            if(hideEntry) {
-              hideEntry = false;
-              return JournalEntry(props);
-            } else {
-              hideEntry = true;
-              return JournalEntry(props);
-            }
-            
-          }}>{new Date(props.entry.createdOn).toLocaleString()}</h2>
-        </Tile>  
-    )
-
-  } else {*/}
