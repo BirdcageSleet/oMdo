@@ -2,6 +2,7 @@ var React = require('react');
 var Tile = require('./tile');
 
 function Profile(props) {
+  console.log('HI ASSHOLE', props)
   return (
     <Tile>
         <h1>{'Hello ' + props.username}</h1>

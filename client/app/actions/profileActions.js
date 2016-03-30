@@ -16,7 +16,7 @@ module.exports = {
   },
   loadSurveys: function() {
     return function(dispatch) {
-      dispatch(surveysLoading());
+      dispatch(module.exports.surveysLoading());
       axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
       axios.get('/user/userData')
         .then(function(response) {

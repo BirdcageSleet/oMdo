@@ -92,23 +92,21 @@ module.exports = {
           var eventData = {sentiment: parsed.eventSentiments, keywords: parsed.eventKeywords};
           var sleepData = {sentiment: parsed.sleepSentiments, keywords: parsed.sleepKeywords};
           var moodData = {sentiment: parsed.moodSentiments, keywords: parsed.moodKeywords.keywords};
-          var newKeyword; 
+          var keywords = {'Event': parsed.eventKeywords.keywords, 'Sleep': parsed.sleepKeywords.keywords, 'Mood': parsed.moodKeywords.keywords}; 
 
           // console.log(parsed.eventKeywords.keywords);
-
-          parsed.eventKeywords.keywords.forEach(function (aKeyword) {
+          for (var key in keywords){
+            keywords[key].forEach(function (aKeyword) {
             Keyword.findOne({keyword: aKeyword.text})
               .then(function (foundKeyword) {
-                var score = Number(aKeyword.sentiment.score);
-                console.log('Scores ', score);
-                console.log('Score stuff ', typeof score);
+                var score = aKeyword.sentiment.score.slice();
                 if (!foundKeyword) {
                   newKeyword = {
                     keyword: aKeyword.text,
-                    userScore: [0],
-                    omdoScores: [score],
+                    userScores: [0],
+                    oMdoScores: [aKeyword.sentiment.score],
                     relevance: [aKeyword.relevance],
-                    field: 'Event',
+                    field: key,
                     surveyDate: new Date(),
                     user: foundUser
                   }
@@ -117,11 +115,10 @@ module.exports = {
                   console.log('im found',foundKeyword);
                 }
 
-                
-
               });
-          })
-
+            });
+          }
+          
           console.log('HALLLOOOOO', JSON.stringify(moodData.keywords));
 
           foundUser.surveys.push(survey);
