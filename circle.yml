@@ -8,7 +8,7 @@ test:
     - webpack
 deployment:
   production:
-    branch: styling
+    branch: staging
     commands:
       - gem install capistrano
       - cap production deploy
