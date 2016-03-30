@@ -69,6 +69,10 @@ form {
   width: 90%;
 }
 
-h3.authReroute {
+/*h3.authReroute {
   color: #ffffff;
+}*/
+
+a {
+  color: #87D68D;
 }

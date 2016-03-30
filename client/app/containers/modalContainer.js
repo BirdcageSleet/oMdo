@@ -21,7 +21,6 @@ var customStyles = {
 var QuotePopUp = React.createClass({
   
   render: function() {
-    console.log('modal: ', this.props);
     return (
       <div>
         <Tile>
@@ -34,8 +33,8 @@ var QuotePopUp = React.createClass({
 
           <h2>Hello</h2>
           <button onClick={this.props.actions.toggleModal}>close</button>
-          <pre>{JSON.stringify(this.props.quote.quote || 'Nothing to see here')}</pre>
-          <pre>{JSON.stringify(this.props.quote.author || 'oMdo Dev Team')}</pre>
+          <pre>{JSON.stringify(this.props.quote.quote)}</pre>
+          <pre>{JSON.stringify(this.props.quote.author)}</pre>
         </Modal>
       </div>
     );

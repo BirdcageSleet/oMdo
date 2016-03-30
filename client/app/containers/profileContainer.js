@@ -22,18 +22,21 @@ var ProfileContainer = React.createClass({
   render: function() {
     return (
       <div>
-        <Greeting username={this.props.username} />
         <Container>
-          <Visualization text='Get An Overview'/>
-          <Diary text='Check Out All Your Data' surveys={this.props.surveys} />
+          <Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} />
           <Journal 
             entries={this.props.surveys}
+            text='Reflect on Your Entries'
           />
         </Container>
       </div>
     )
   }
 });
+{/*
+  <Greeting username={this.props.username} />
+  <Visualization text='See Your Last 7 Days'/>
+*/}
 
 function mapStateToProps(state, ownProps) {
   return {
