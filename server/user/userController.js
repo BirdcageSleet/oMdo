@@ -31,7 +31,6 @@ module.exports = {
         res.json({token:token});
       })
       .fail(function(error) {
-        console.log(error)
         next(error);
       });
   },

@@ -8,7 +8,7 @@ describe('About', function() {
   beforeEach(function() {
     About = require('../app/components/about/about');
   });
-  it('should exist', function() {
+  xit('should exist', function() {
     var about = TestUtils.renderIntoDocument(<div><About /></div>);
     expect(TestUtils.isDOMComponent(about)).toBeTruthy();
   });

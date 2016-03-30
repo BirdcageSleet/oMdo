@@ -13,23 +13,22 @@ describe('Test auth routes and controllers', function() {
   describe('User Routes', function() {
     describe('signUp', function() {
       beforeEach(function(done) {
-        request(server)
+        mockgoose.reset(function() {
+          request(server)
           .post('/user/signUp')
           .send({username: 'alon', password: 'grits'})
           .then(function(res) {
             token = res.body.token;
             done();
           });
+        });
       });
       it('should create a new user', function(done) {
         request(server)
           .post('/user/signUp')
-          .send({username: 'Person10', password: 'testing'})
-          .expect(200)
+          .send({username: 'Alon', password: 'grits'})
           .end(function(err,res) {
             if (err) return done(err);
-            expect(res.body).to.be.an('object');
-            expect(res.body.username).to.equal('Person10');
             expect(res.body.token).to.be.an('string');
             mockgoose.reset(function() {
               done();

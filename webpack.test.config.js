@@ -5,17 +5,17 @@ var StatsWebpackPlugin = require('stats-webpack-plugin');
 
 var testDir = __dirname + '/client/__tests__/';
 module.exports = {
-  entry: [
-    testDir + 'about-test.js',
-    testDir + 'authComponents-tests.js',
-    testDir + 'home-tests.js',
-    testDir + 'main-test.js',
-    testDir + 'navbar-test.js',
-    testDir + 'profile-test'
-  ],
+  entry: {
+    '/client/__tests__/about-test.js': testDir + 'about-test.js',
+    '/client/__tests__/authComponents-tests.js': testDir + 'authComponents-tests.js',
+    '/client/__tests__/home-tests.js': testDir + 'home-tests.js',
+    '/client/__tests__/main-test.js': testDir + 'main-test.js',
+    '/client/__tests__/navbar-test.js': testDir + 'navbar-test.js',
+    '/client/__tests__/profile-test': testDir + 'profile-test'
+  },
   output: {
-    path: __dirname + '/client/__test_bundle__',
-    filename: 'test_bundle.js',
+    path: __dirname + '/client/__bundled_tests__',
+    filename: '[name].js',
   },
   module: {
     loaders: [
