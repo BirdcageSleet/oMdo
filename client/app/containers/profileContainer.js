@@ -19,58 +19,33 @@ var ProfileContainer = React.createClass({
     this.props.actions.checkAuth();
     this.props.actions.loadSurveys();
   },
+  handleRevealDiary: function(id) {
+    if(this.props.entryIds[id]) {
+      this.props.actions.closeDiary(id);
+    } else {
+      this.props.actions.openDiary(id);
+    }
+  },
   render: function() {
-    console.log('profCont: ', this.props.location.pathname);
     return (
      this.props.location.pathname === '/summary' ?
       <div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>
-      : 
-      <div><Journal 
+      :
+      <div><Journal
             entries={this.props.surveys}
             text='Reflect on Your Entries'
           /></div>
     )
   }
 });
-{/*
-  <Greeting username={this.props.username} />
-  <Visualization text='See Your Last 7 Days'/>
-  return (
-      <div>
-        <Container>
-          <Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} />
-          <Journal 
-            entries={this.props.surveys}
-            text='Reflect on Your Entries'
-          />
-        </Container>
-      </div>
-    )
-<<<<<<< 0d464154dbe99bf1e630ce7783797077853351ec
-if(this.props.location.pathname === 'summary') {
-      return (<div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>)
-    } else if(this.props.location.pathname === 'journal') {
-      return (<div><Journal 
-            entries={this.props.surveys}
-            text='Reflect on Your Entries'
-          /></div>)
-    }  
-  
-=======
-  }
-});
-{/*
-  <Greeting username={this.props.username} />
-  <Visualization text='See Your Last 7 Days'/>
->>>>>>> Continue style implementation
-*/}
 
 function mapStateToProps(state, ownProps) {
   return {
     username: state.authReducer.username,
     surveys: state.profileReducer.surveys,
     isLoading: state.profileReducer.isLoading,
-    isLoggedIn: state.authReducer.isLoggedIn
+    isLoggedIn: state.authReducer.isLoggedIn,
+    entryIds: state.profileReducer.entryIds
   }
 };
 

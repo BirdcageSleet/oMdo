@@ -11,6 +11,8 @@ function Journal(props) {
           <JournalEntry
             entry={entry}
             key={i}
+            onRevealDiary={props.onRevealDiary}
+            entryIds={props.entryIds}
           />
         )
       })}
