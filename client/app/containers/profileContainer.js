@@ -20,6 +20,7 @@ var ProfileContainer = React.createClass({
     this.props.actions.loadSurveys();
   },
   handleRevealDiary: function(id) {
+    // console.log('eventual... ', e.target.value);
     console.log('checking entry ids ', this.props.entryIds[id]);
     if(this.props.entryIds[id]) {
       this.props.actions.closeDiary(id);

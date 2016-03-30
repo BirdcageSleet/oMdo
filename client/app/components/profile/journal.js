@@ -13,6 +13,7 @@ function Journal(props) {
             key={i}
             onRevealDiary={props.onRevealDiary}
             entryIds={props.entryIds}
+            entryId={props.entryIds[entry._id]}
           />
         )
       })}
