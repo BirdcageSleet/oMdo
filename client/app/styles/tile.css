@@ -35,6 +35,7 @@ button:hover {
   border-color: #283D3B;
 }
 
+
 input[type=range] {
   width: 55%;
   /*height: 5px;*/
@@ -108,5 +109,9 @@ textarea:focus {
 
 .journalList {
   text-align: left;
+}
+
+.radarChart {
+  margin-left: 20%;
 }
 

@@ -62,20 +62,23 @@ var ProfileContainer = React.createClass({
     console.log('profile container props ', this.props);
     return (
       <div>
-        <Greeting username={this.props.username} />
         <Container>
-          <Visualization text='Get An Overview'/>
-          <Diary text='Check Out All Your Data' surveys={this.props.surveys} />
+          <Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} />
           <Journal 
             entries={this.props.surveys}
             onRevealDiary={this.handleRevealDiary}
             hideEntry={this.hideEntry}
+            text='Reflect on Your Entries'
           />
         </Container>
       </div>
     )
   }
 });
+{/*
+  <Greeting username={this.props.username} />
+  <Visualization text='See Your Last 7 Days'/>
+*/}
 
 function mapStateToProps(state, ownProps) {
   return {

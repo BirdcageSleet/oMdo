@@ -1,11 +1,12 @@
-/*@import './config.css';
+@import './config.css';
 
 input[type=range] {
-  width: 85%;
+  width: 75%;
   height: 5px;
   background: #71808E;
   border: none;
   border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -14,13 +15,15 @@ input[type=range]::-webkit-slider-thumb {
   width: 16px;
   border-radius: 50%;
   background: #ED6A5A;
-  margin-top: -4px;
+  /*margin-top: -4px;*/
 }
 
 select {
-  border: none;
+  border: solid black 1px;
   background-color: white;
   color: #424B54;
+  margin-left: 5%;
+  font-size: 18px;
 }
 
 select:checked {
@@ -34,7 +37,8 @@ option {
 }
 
  input[type=radio] {
-   padding: 0;
+   
+   padding: 0px;
    background: transparent;
    background-color: white;
    vertical-align: text-top;
@@ -45,9 +49,8 @@ option {
   }
 
 textarea {
-  border: none;
-  resize: none;
-  width: 90%
+  border: solid black 1px;
+  width: 90%;
 }
 
 .textQuestion {
@@ -55,15 +58,16 @@ textarea {
   width: 65%;
   padding: 5px 5px 5px 5px;
   margin: 1% 17.5%;
-  box-shadow: 5px 4px 5px #424B54;
+  text-align: center;
+
 }
 
 .radioList {
-  padding-left: 0;
+  margin-left: 5%;
 }
 
 .radioList li {
-  margin: 0 5px;
+  margin-left: 5%;
   display: inline-block;
 }
-*/
+

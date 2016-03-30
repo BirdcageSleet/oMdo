@@ -5,11 +5,11 @@ var css = require('../../styles/profile.css');
 
 function Diary (props) {
   return (
-    <ol className={props.css.diary}>
+    <div className={props.css.diary}>
         <DiaryEntry
         data={props.surveys}
       />
-    </ol>
+    </div>
   )
 }
 
