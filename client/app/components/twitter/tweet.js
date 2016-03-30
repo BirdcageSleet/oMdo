@@ -191,7 +191,7 @@ function Tweet (props) {
     )
   } else {
     return (
-      <Tile>No tweets yet</Tile>
+      <Tile>Please enter your Twitter handle above and press <em>Submit</em>.</Tile>
     )
   }
 }
