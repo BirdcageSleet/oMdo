@@ -50,7 +50,7 @@ module.exports = {
     return function(dispatch) {
       dispatch(module.exports.surveySubmit());
       axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
-      axios.post('/user/userData', survey)
+      axios.post('/survey/surveySubmit', survey)
         .then(function(response) {
           dispatch(module.exports.surveySuccess());
           browserHistory.push('/journal');
