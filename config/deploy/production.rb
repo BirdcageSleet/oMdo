@@ -1,7 +1,7 @@
 set :branch, 'master'
 set :application, 'skynet'
-set :repo_url, 'git@github.com:BirdcageSleet/skynet.git'
-set :deploy_to, '/var/www/skynet'
+set :repo_url, 'git@github.com:BirdcageSleet/oMdo.git'
+set :deploy_to, '/var/www/oMdo'
 set :ssh_options, { :forward_agent => true }
 set :stage, :production
 
