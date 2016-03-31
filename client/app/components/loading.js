@@ -7,7 +7,7 @@ function Loading (props) {
   return (
     <div className={props.css.root}>
       <Tile>
-        <h1>Let Mike dream...  Your feelings will be here shortly...</h1>
+        <h1>Pulling boxes from storage. Give us a moment. </h1>
       </Tile>
     </div>
   )

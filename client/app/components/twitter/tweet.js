@@ -11,11 +11,10 @@ function Tweet (props) {
     <div className={props.css.chartContainer}>
       <Tile className={props.css.chart}>
         <h2>What Are Your Tweets Really Saying?</h2>
-
           <BarChart data={format(props.tones)} options={props.chartOptions} width='400' height='290' />
       </Tile>
       <Tile>
-      <h3 className={props.css.toneHeader} onClick={props.onEmotionDisplay}>Emotional Tone</h3>
+        <h3 className={props.css.sectionHeader} onClick={props.onEmotionDisplay}>Emotional Tone</h3>
           {
             props.emotionDisplay ?
 
@@ -72,7 +71,7 @@ function Tweet (props) {
 
       </Tile>
       <Tile>
-        <h3 onClick={props.onLanguageDisplay}>Language Tone</h3>
+        <h3 className={props.css.sectionHeader} onClick={props.onLanguageDisplay}>Language Tone</h3>
           {
             props.languageDisplay ?
 
@@ -116,7 +115,7 @@ function Tweet (props) {
           }
       </Tile>
       <Tile>
-        <h3 onClick={props.onSocialDisplay}>Social Tone</h3>
+        <h3 className={props.css.sectionHeader} onClick={props.onSocialDisplay}>Social Tone</h3>
         {
             props.socialDisplay ?
 

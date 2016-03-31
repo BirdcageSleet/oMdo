@@ -59,8 +59,25 @@ var ProfileContainer = React.createClass({
     // }
   },
   render: function() {
-    console.log('profile container props ', this.props);
     return (
+     this.props.location.pathname === '/summary' ?
+      <div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>
+      : 
+      <div>
+        <Journal 
+          entries={this.props.surveys}
+          text='Reflect on Your Entries'
+          onRevealDiary={this.onRevealDiary}
+          hideEntry={this.hideEntry}
+        />
+      </div>
+    )
+  }
+});
+{/*
+  <Greeting username={this.props.username} />
+  <Visualization text='See Your Last 7 Days'/>
+  return (
       <div>
         <Container>
           <Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} />
@@ -73,11 +90,15 @@ var ProfileContainer = React.createClass({
         </Container>
       </div>
     )
-  }
-});
-{/*
-  <Greeting username={this.props.username} />
-  <Visualization text='See Your Last 7 Days'/>
+if(this.props.location.pathname === 'summary') {
+      return (<div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>)
+    } else if(this.props.location.pathname === 'journal') {
+      return (<div><Journal 
+            entries={this.props.surveys}
+            text='Reflect on Your Entries'
+          /></div>)
+    }  
+  
 */}
 
 function mapStateToProps(state, ownProps) {
