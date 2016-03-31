@@ -5,6 +5,7 @@ var styleable = require('react-styleable').default
 var css = require('../styles/navbar.css');
 
 function Navbar(props) {
+  console.log('HIIZME', props)
   return !props.isLoggedIn
     ? (
       <div>
@@ -14,13 +15,15 @@ function Navbar(props) {
       </div>
     )
     : (
-      <div className={props.className}>
+      <div className={props.css.navButtonContainer}>
+      <div className={props.css.linkHolder}>
         {props.children}
-        <Link className={props.css.navItem} to='/signin' tabIndex='130' onClick={props.onSignOut}> Log Out </Link>
-        <Link className={props.css.navItem} to='/summary' tabIndex='120'> 7-Day Summary </Link>
-        <Link className={props.css.navItem} to='/journal' tabIndex='111'> Journal </Link>
-        <Link className={props.css.navItem} to='/meditations' tabIndex='110'> Daily Survey </Link>
-        <Link className={props.css.navItem} to='/twit' tabIndex='100'> Analyze Your Twitter Feed </Link>
+        <Link className={props.css.summary} to='/summary' tabIndex='120'> 7-Day Summary </Link>
+        <Link className={props.css.journal} to='/journal' tabIndex='111'> Journal </Link>
+        <Link className={props.css.meditations} to='/meditations' tabIndex='110'> Daily Survey </Link>
+        <Link className={props.css.twit} to='/twit' tabIndex='100'> Analyze Your Twitter Feed </Link>
+      </div>
+      <Link className={props.css.logout} to='/signin' tabIndex='130' onClick={props.onSignOut}> Log Out </Link>
       </div>
     )
 }

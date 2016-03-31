@@ -1,6 +1,7 @@
 var User = require('../db/models/userSchema.js');
 var Survey = require('../db/models/surveySchema.js');
 var Keyword = require('../db/models/keywordSchema.js');
+var Score = require('../db/models/scoreSchema.js');
 var jwt = require('jwt-simple');
 var Q = require('q');
 var mongoose = require('mongoose');
@@ -72,6 +73,7 @@ module.exports = {
     // console.log('HIHIHIHIHI', req.body);
     var token = req.headers['x-access-token'];
     var create = Q.nbind(Keyword.create, Keyword);
+    var createScore = Q.nbind(Score.create, Score);
     if (!token) {
       next(new Error('Token not found while trying to post to survey'));
       }
@@ -93,15 +95,17 @@ module.exports = {
           var keywords = {'Event': parsed.eventKeywords.keywords, 'Sleep': parsed.sleepKeywords.keywords, 'Mood': parsed.moodKeywords.keywords}; 
           var sentiments = {'Event': parsed.eventSentiments, 'Sleep': parsed.sleepSentiments, 'Mood': parsed.moodSentiments};
           // console.log(parsed.eventKeywords.keywords);
+
           _.each(keywords, function(keywordArray, key){
             keywordArray.forEach(function (aKeyword) {
-              Keyword.findOne({keyword: aKeyword.text})
+              Keyword.findOne({keyword: aKeyword.text, field: key})
               .then(function (foundKeyword) {
                 var score = aKeyword.sentiment.score.slice();
                 if (!foundKeyword) {
                   newKeyword = {
                     keyword: aKeyword.text,
                     userScores: [0],
+                    docScores: [sentiments[key].docSentiment.score],
                     oMdoScores: [aKeyword.sentiment.score],
                     relevance: [aKeyword.relevance],
                     field: key,
@@ -110,8 +114,8 @@ module.exports = {
                   }
                   return create(newKeyword)
                 } else {
-                  Keyword.findOneAndUpdate({keyword: aKeyword.text}, 
-                    {'$push' : {oMdoScores: aKeyword.sentiment.score}},
+                  Keyword.findOneAndUpdate({keyword: aKeyword.text, field: key}, 
+                    {'$push' : {oMdoScores: aKeyword.sentiment.score, docScores: sentiments[key].docSentiment.score, relevance: aKeyword.relevance}},
                     {safe: true, upsert: true},
                     function (err, model) {
                       console.log (err);
@@ -123,7 +127,18 @@ module.exports = {
             });
           });
           
-          console.log('HALLLOOOOO', JSON.stringify(moodData.keywords));
+          newScore = {
+            sleepScore: sentiments.Sleep.docSentiment.score,
+            moodScore: sentiments.Mood.docSentiment.score,
+            eventScore: sentiments.Event.docSentiment.score,
+            sleepMixed: sentiments.Sleep.docSentiment.mixed,
+            moodMixed: sentiments.Mood.docSentiment.mixed,
+            eventMixed: sentiments.Event.docSentiment.mixed,
+            survey: survey,
+            createdBy: foundUser,
+          }
+          
+          createScore(newScore);
 
           foundUser.surveys.push(survey);
           foundUser.save()

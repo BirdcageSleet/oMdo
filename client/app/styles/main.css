@@ -9,9 +9,9 @@
 
 html {
 /*  text-align: left;
-*/  font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", sans-serif;  
+*/  font-family: "Quicksand", sans-serif;  
   line-height: 1.4em;
-  background-color: white;
+  background-color: #eaeced;
 }
 
 body {
@@ -126,4 +126,28 @@ input[type=range]::-webkit-slider-thumb {
   color: white;
   text-align: center;
   margin-left: 45%;
+}
+
+.footer {
+  margin-top: 20px;
+  height: 200px;
+  background-color: #24343d;
+  color:white;
+  text-align: center;
+  font-size: 10px;
+  position:relative;
+}
+
+.year {
+  position: absolute;
+  bottom: 55px;
+  right: 50%;
+  display: inline-block;
+}
+
+.footerLogo {
+  position: absolute;
+  right: 47%;
+  bottom: 80px;
+  vertical-align: middle;
 }

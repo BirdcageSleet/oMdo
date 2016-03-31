@@ -11,6 +11,7 @@ function Main (props){
         <Navbar />
       </Header>
       {props.children}
+      <div className={props.css.footer}><img className={props.css.footerLogo} src={require('../../assets/oMdo.png')} width='90px' height='35px' alt={'oMdo'} /><div className={props.css.year}>2016</div></div>
     </div>
   )
 }
