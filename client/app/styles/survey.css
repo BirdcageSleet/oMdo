@@ -1,7 +1,7 @@
 @import './config.css';
 
 input[type=range] {
-  width: 65%;
+  width: 60%;
   height: 5px;
   background: #71808E;
   border: none;
@@ -96,4 +96,12 @@ textarea {
 .twitterField > input {
   width: 300px;
   font-size: 18px;
+}
+
+.textBox {
+  text-align: center;
+}
+
+.slider {
+  text-align: center;
 }
