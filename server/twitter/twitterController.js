@@ -1,5 +1,5 @@
 var path = require('path');
-var dotenv = require('dotenv').config(path.join(__dirname, '../../.env'));
+var dotenv = require('dotenv').config({path: path.join(__dirname, '../../.env')});
 var Twitter = require('twitter');
 var watson = require('watson-developer-cloud');
 
