@@ -40,12 +40,6 @@ module.exports = {
           dispatch(module.exports.surveysNotLoaded());
         });
     };
-  },
-  openDiary: function(id) {
-    return {type: actions.OPEN_DIARY, id: id};
-  },
-  closeDiary: function(id) {
-    return {type: actions.CLOSE_DIARY, id: id};
   }
   // openDiary: function(id) {
   //   return {type: actions.OPEN_DIARY, id: id};

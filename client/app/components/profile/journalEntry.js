@@ -93,4 +93,3 @@ function JournalEntry(props) {
 };
 
 module.exports = styleable(css)(JournalEntry);
-    
