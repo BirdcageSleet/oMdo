@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 var dotenv = require('dotenv').config();
 var AlchemyAPI = require('../alchemyapi');
 var alchemyapi = new AlchemyAPI();
+var _ = require('underscore');
 
 
 
@@ -89,15 +90,12 @@ module.exports = {
           console.log('DISDAUSER', foundUser);
 
           var parsed = JSON.parse(req.body.output);
-          var eventData = {sentiment: parsed.eventSentiments, keywords: parsed.eventKeywords};
-          var sleepData = {sentiment: parsed.sleepSentiments, keywords: parsed.sleepKeywords};
-          var moodData = {sentiment: parsed.moodSentiments, keywords: parsed.moodKeywords.keywords};
           var keywords = {'Event': parsed.eventKeywords.keywords, 'Sleep': parsed.sleepKeywords.keywords, 'Mood': parsed.moodKeywords.keywords}; 
-
+          var sentiments = {'Event': parsed.eventSentiments, 'Sleep': parsed.sleepSentiments, 'Mood': parsed.moodSentiments};
           // console.log(parsed.eventKeywords.keywords);
-          for (var key in keywords){
-            keywords[key].forEach(function (aKeyword) {
-            Keyword.findOne({keyword: aKeyword.text})
+          _.each(keywords, function(keywordArray, key){
+            keywordArray.forEach(function (aKeyword) {
+              Keyword.findOne({keyword: aKeyword.text})
               .then(function (foundKeyword) {
                 var score = aKeyword.sentiment.score.slice();
                 if (!foundKeyword) {
@@ -112,12 +110,18 @@ module.exports = {
                   }
                   return create(newKeyword)
                 } else {
-                  console.log('im found',foundKeyword);
+                  Keyword.findOneAndUpdate({keyword: aKeyword.text}, 
+                    {'$push' : {oMdoScores: aKeyword.sentiment.score}},
+                    {safe: true, upsert: true},
+                    function (err, model) {
+                      console.log (err);
+                    }
+                  );
                 }
 
               });
             });
-          }
+          });
           
           console.log('HALLLOOOOO', JSON.stringify(moodData.keywords));
 
