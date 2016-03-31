@@ -74,6 +74,27 @@ var ProfileContainer = React.createClass({
     )
   }
 });
+{/*
+  <Greeting username={this.props.username} />
+  <Visualization text='See Your Last 7 Days'/>
+  return (
+      <div>
+        <Container>
+          <Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} />
+          <Journal 
+            entries={this.props.surveys}
+            text='Reflect on Your Entries'
+            entryIds={this.props.entryIds}
+            onRevealDiary={this.handleRevealDiary}
+            onRevealDiary={this.handleRevealDiary}
+            hideEntry={this.hideEntry}
+          />
+        </Container>
+>>>>>>> Initial keyword visualization attempt
+      </div>
+    )
+  }
+});
 
 function mapStateToProps(state, ownProps) {
   return {

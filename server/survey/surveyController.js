@@ -159,5 +159,41 @@ module.exports = {
           res.sendStatus(500);
         }
       });
+    },
+
+    getKeywords: function(req, res, next) {
+      var token = req.headers['x-access-token'];
+      if (!token) {
+        next(new Error('No token found!'));
+      } else {
+        var user =jwt.decode(token, process.env.JWT_SECRET);
+        User.findOne({username: user.username})
+        .populate('surveys')
+        .exec(function(err, result) {
+          if (err || result === null) next(new Error('Error finding surveys'));
+          res.send(result.surveys);
+        })
+        .catch(function(error) {
+          next(new Error(error));
+        });
+      }
     }
+
+    getUserSurveys: function(req,res,next) {
+    var token = req.headers['x-access-token'];
+    if (!token) {
+      next(new Error('No token found!'));
+    } else {
+      var user =jwt.decode(token, process.env.JWT_SECRET);
+      User.findOne({username: user.username})
+      .exec(function(err, user) {
+        if (err || result === null) next(new Error('Error finding surveys'));
+        console.log(user);
+        // Keyword.findOne({user: user})
+      })
+      .catch(function(error) {
+        next(new Error(error));
+      });
+    }
+  },
 };

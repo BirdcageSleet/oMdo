@@ -20,6 +20,7 @@ module.exports = {
       axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
       axios.get('/user/userData')
         .then(function(response) {
+          console.log('where is the mood stuff? ', response.data);
           var graphData = response.data;
           if (graphData.length > 7) {
             graphData = graphData.slice(graphData.length-7);
@@ -40,6 +41,12 @@ module.exports = {
           dispatch(module.exports.surveysNotLoaded());
         });
     };
+  },
+  getKeywords: function() {
+    return function(dispatch) {
+      dispatch(module.exports.keywordsLoading());
+      axios.defaults.headers.common['x-access-token']
+    }
   }
   // openDiary: function(id) {
   //   return {type: actions.OPEN_DIARY, id: id};
