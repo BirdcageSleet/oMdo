@@ -11,7 +11,7 @@ function Survey(props) {
     <Loading />
   )
   : (
-    <Form onSubmit={props.onSubmit} 
+    <Form onSubmit={props.onSubmit}
           text='Submit'
           buttonClassName={props.css.submitForm} >
       <Questions questions={props.questions} handlers={props.handlers} />

@@ -3,14 +3,43 @@
   cursor: pointer;
 }
 
-.breakdown {
-  background-color: rgba(255,255,0,0.4);
-  display: inline-block;
-  float: left;
-  margin: 5px;
-  padding: 5px;
-}
-
 .sectionHeader {
   cursor: pointer;
+}
+
+.breakdown {
+  margin: 5px 5px 5px 5px;
+  padding: 0 0 0 0;
+  text-align: left;
+}
+
+.emotional{
+  composes: breakdown;
+}
+
+.language{
+  composes: breakdown;
+}
+
+.social {
+  composes: breakdown;
+}
+
+.category {
+  margin-right: 30px;
+}
+
+.percentage {
+  list-style-type: circle;
+  color: #676c6f;
+  margin-left: 30px;
+  font-size: 15px;
+}
+
+.header {
+  font-weight: 200;
+  text-align: center;
+  color: white;
+  background-color: #99abb6;
+  padding: 5px 0 5px 0px;
 }

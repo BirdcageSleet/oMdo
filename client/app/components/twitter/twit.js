@@ -10,13 +10,15 @@ function Twit(props) {
     props.isLoading === true
     ? <Loading />
     : <Tile>
-        <Form onSubmit={props.onSubmit} text='Submit' buttonClassName={props.css.submitForm} >
+      <div className={props.css.twitterHolder}>
+        <Form onSubmit={props.onSubmit} text='Submit' buttonClassName={props.css.submitTwit}>
           <h2>What does your Twitter feed say about your mood?</h2>
           <p>This will fetch your 25 most recent tweets and run them through a sentiment analysis. The results will show the general sentiment (positive, negative, or neutral) for this subset of tweets.</p>
           <div className={props.css.twitterField}>
-            <input type='text' placeholder='Twitter Handle' onChange={props.onTwitterChange} />
+            <input className={props.css.inputBox} type='text' placeholder='Twitter Handle' onChange={props.onTwitterChange} />
           </div>
-      </Form>
+        </Form>
+      </div>
     </Tile>
   )
 }

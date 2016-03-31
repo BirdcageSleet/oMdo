@@ -87,6 +87,7 @@ option {
 
 textarea {
   border: solid 1px;
+  border-color: #e5eef4;
   resize: none;
   width: 90%
 }
@@ -103,11 +104,9 @@ textarea:focus {
 }
 
 .radioList {
-  margin-left: 5%;
 }
 
 .radioList li {
-  margin-left: 5%;
   display: inline-block;
 }
 
@@ -116,6 +115,9 @@ textarea:focus {
 }
 
 .radarChart {
-  margin-left: 20%;
+}
+
+.summaryText {
+  text-align: left;
 }
 
