@@ -6,7 +6,7 @@ var css = require('../../styles/tile.css');
 
 function DiaryEntry (props) {
     if(props.data.length === 0) {
-      return (<div><h2>You need to submit a survey</h2></div>)
+      return (<div><h2>You'll need to submit a survey before you can reflect on your recent entries.</h2></div>)
     } else {
   return (
 

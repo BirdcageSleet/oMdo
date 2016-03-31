@@ -20,6 +20,8 @@ var Routes = (
     <Route path='signup' component={AuthContainer} />
     <Route path='meditations' component={SurveyContainer} />
     <Route path='profile' component={ProfileContainer} />
+    <Route path='summary' component={ProfileContainer} />
+    <Route path='journal' component={ProfileContainer} />
     <Route path='twit' component={TwitContainer} />
     <Route path='about' component={About} />
   </Route>

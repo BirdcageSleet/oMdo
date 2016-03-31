@@ -54,7 +54,7 @@ module.exports = {
       axios.post('/user/userData', survey)
         .then(function(response) {
           dispatch(module.exports.surveySuccess());
-          browserHistory.push('/profile');
+          browserHistory.push('/journal');
         })
         .catch(function(error) {
           dispatch(module.exports.surveyFailure());
