@@ -1,14 +1,18 @@
 var React = require('react');
+var Header = require('./header');
+var Navbar = require('../containers/navbarContainer');
+var styleable = require('react-styleable').default;
+var css = require('../styles/main.css');
 
-var Main = React.createClass({
-  render: function() {
-    return(
-      <div>
-        {/*navbar}*/}
-        {this.props.children}
-      </div>
-    )
-  } 
-})
+function Main (props){
+  return(
+    <div>
+      <Header>
+        <Navbar />
+      </Header>
+      {props.children}
+    </div>
+  )
+}
 
-module.exports = Main;
+module.exports = styleable(css)(Main);
