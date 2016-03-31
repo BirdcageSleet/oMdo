@@ -17,7 +17,8 @@
 
 var http = require('http');
 var fs = require('fs');
-var dotenv = require('dotenv');
+var path = require('path');
+var dotenv = require('dotenv').config({path: path.join(__dirname, '../.env')});
 
 
 //Make the class available

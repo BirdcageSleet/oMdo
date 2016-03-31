@@ -3,7 +3,8 @@ var Survey = require('../db/models/surveySchema.js');
 var jwt = require('jwt-simple');
 var Q = require('q');
 var mongoose = require('mongoose');
-var dotenv = require('dotenv').config();
+var path = require('path');
+var dotenv = require('dotenv').config({path: path.join(__dirname, '../../.env')});
 var AlchemyAPI = require('../alchemyapi');
 var alchemyapi = new AlchemyAPI();
 
