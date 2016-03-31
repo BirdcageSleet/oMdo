@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'skynet'
-set :repo_url, 'git@github.com:BirdcageSleet/oMdo.git'
+set :repo_url, 'git@github.com:jsoo1/oMdo.git'
 set :user, 'ec2-user'
 
 namespace :deploy do
