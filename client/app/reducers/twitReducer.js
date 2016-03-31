@@ -23,7 +23,7 @@ function twitReducer(state, action) {
   if(state === undefined) {
     state = initialState;
   }
-  
+
   switch(action.type) {
     case actions.TWIT_SUBMIT:
       return Object.assign({}, state, {
@@ -31,7 +31,6 @@ function twitReducer(state, action) {
         handle: ''
       });
     case actions.TWIT_SUCCESS:
-      console.log('inside the reducer! ', action.tweets[0].tones[0].score); 
       return Object.assign({}, state, {
         isLoading: false,
         tones: action.tweets,
@@ -49,12 +48,10 @@ function twitReducer(state, action) {
         handle: action.handle
       });
     case actions.DISPLAY_EMOTION:
-      console.log('emotional display in the reducer!');
       return Object.assign({}, state, {
         emotionDisplay: true
       });
     case actions.HIDE_EMOTION:
-      console.log('hiding emotions in the reducer!');
       return Object.assign({}, state, {
         emotionDisplay: false
       });
@@ -73,7 +70,7 @@ function twitReducer(state, action) {
     case actions.HIDE_SOCIAL:
       return Object.assign({}, state, {
         socialDisplay: false
-      });  
+      });
     default:
       return state;
   }

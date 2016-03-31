@@ -27,6 +27,6 @@ function profileReducer(state, action) {
     default:
       return state;
   }
-};
+}
 
 module.exports = profileReducer;

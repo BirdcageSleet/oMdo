@@ -13,6 +13,8 @@ function Auth(props) {
         onSubmit={props.onSubmit}
         text={props.text}
         pathname={props.pathname}
+        authReroute={props.css.authReroute}
+        authLink={props.css.authLink}
         >
         
         <div>

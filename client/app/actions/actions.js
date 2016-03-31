@@ -14,6 +14,12 @@ module.exports = {
   SWITCHING_VIEW: 'SWITCHING_VIEW',
   SWITCHED_VIEW: 'SWITCHED_VIEW',
 
+  // modal actions
+  TOGGLE_MODAL: 'TOGGLE_MODAL',
+
+  // home actions
+  QUOTE_FETCHED: 'QUOTE_FETCHED',
+
   // Survey actions
   SURVEY_SUBMIT: 'SURVEY_SUBMIT',
   SURVEY_SUCCESS: 'SURVEY_SUCCESS',

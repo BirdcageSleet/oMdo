@@ -21,9 +21,7 @@ module.exports = {
       axios.defaults.headers.common['x-access-token'] = window.localStorage.getItem('x-access-token');
       axios.post('/twitter/fetch', name)
         .then(function(res) {
-          console.log('res from success ', res.data.tone_categories);
           dispatch(module.exports.twitSuccess(res.data.tone_categories));
-          // console.log('twitSubmit res: ', res.data.tweets);
         })
         .catch(function(err) {
           dispatch(module.exports.twitFailure());

@@ -9,14 +9,13 @@ function GeneralNav (props) {
     <Frame className={props.css.nav}>
       {props.children.map(function(child, i) {
         return (
-          <div>
-            <button
-              key={i*10}
+          <div key={(i+ 1) * 10} >
+            <div
               className={props.css.navItem}
               onClick={props.handlers[i]}
               >
               {child.props.text || 'Checkout item ' + i}
-            </button>
+            </div>
           </div>
         )
       })}

@@ -27,7 +27,6 @@ var TwitContainer = React.createClass({
     this.props.actions.submitTwit(twitterHandle);
   },
   handleEmotionDisplay: function(e) {
-    console.log('container for your emotions!');
     if(!this.props.emotionDisplay) {
       this.props.actions.displayEmotion();
     } else {

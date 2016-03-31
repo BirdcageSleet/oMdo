@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 html {
-  text-align: center;
-  font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", sans-serif;
+/*  text-align: left;
+*/  font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", sans-serif;
   
   line-height: 1.4em;
   background-color: #586994;
@@ -46,27 +46,23 @@ input[type=range]::-webkit-slider-thumb {
 .nav {
   margin: 1% 1%;
   display: inline-block;
+  float:left;
 }
 
 .navItem {
-  box-shadow: 3px 2px 3px #272C31;
-  resize: inherit;
-  color: white;
+  color: #fff;
   padding: 3px 3px;
   margin: 3px 5px;
   display: inline-block;
-  background-color: #ED6A5A;
-  border-style: solid;
-  border-color: white;
-  border-width: 1px;
-  font-weight: 10;
-  font-size: 14px;
+  font-size: 18px;
   text-decoration: none;
-  border-radius: 15px;
+  /*float: left;*/
 }
 
 .navItem:hover {
-  background-color: #cb2a16;
+  color: #b8d8d8;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .contentBox {
@@ -81,16 +77,15 @@ input[type=range]::-webkit-slider-thumb {
   width: 100%;
 }*/
 
+
+
 .form button {
-  box-shadow: 5px 4px 5px #424B54;
   margin-bottom: 30px;
   font-size: 20px;
   padding: 10px 10px;
   border: visible;
   border-style: solid;
   border-color: white;
-  border-radius: 15px;
-  background-color: white;
 }
 
 .form button:hover {
@@ -98,4 +93,18 @@ input[type=range]::-webkit-slider-thumb {
   color: #283D3B;
   background-color: #F5D547;
   border-color: #283D3B;
+}
+/*h3.authReroute > span{
+  color: #ffffff;
+}
+
+.authLink {
+  color: #87D68D;
+}*/
+
+.submitForm {
+  background-color: #4F6367;
+  color: white;
+  text-align: center;
+  margin-left: 45%;
 }

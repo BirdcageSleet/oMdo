@@ -13,12 +13,13 @@ var defaultRes = {
 module.exports = {
   getQuote: function(req, res, next) {
     fs.stat(__dirname + '/quote.json', function(err, stats) {
-      if (!stats.isFile()) res.send(defaultRes);
+      if (err) {
+        return res.send(defaultRes);
+      }
       fs.readFile(__dirname + '/quote.json', 'utf8', function(err, data) {
-        if (err) next(new Error('There was an error reading the quote file'));
-        if (!data.length) res.send(defaultRes);
+        if (err || !data.length) return res.send(defaultRes);
         res.json(JSON.parse(data));
       });
     });
   }
-}
+};

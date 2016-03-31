@@ -1,21 +1,21 @@
 var React = require('react');
 var BarChart = require('react-chartjs').Bar;
+var Tile = require('../tile');
 var format = require('../utilities/formatTwitterData');
 var styleable = require('react-styleable').default;
 var css = require('../../styles/twitterCharts.css');
 
 function Tweet (props) {
-  console.log('the props of a tweet ', props);
   if(props.tones.length) {
     return (
     <div className={props.css.chartContainer}>
-      <h2>What Are Your Tweets Really Saying?</h2>
-      <div className={props.css.chart}>
+      <Tile className={props.css.chart}>
+        <h2>What Are Your Tweets Really Saying?</h2>
 
           <BarChart data={format(props.tones)} options={props.chartOptions} width='400' height='290' />
-      </div>
-      <div className={props.css.breakdown}>
-      <h3 onClick={props.onEmotionDisplay}>Emotional Tone</h3>
+      </Tile>
+      <Tile>
+      <h3 className={props.css.sectionHeader} onClick={props.onEmotionDisplay}>Emotional Tone</h3>
           {
             props.emotionDisplay ?
 
@@ -69,13 +69,13 @@ function Tweet (props) {
           :
           null
           }
-          
-      </div>
-      <div className={props.css.breakdown}>
-        <h3 onClick={props.onLanguageDisplay}>Language Tone</h3>
+
+      </Tile>
+      <Tile>
+        <h3 className={props.css.sectionHeader} onClick={props.onLanguageDisplay}>Language Tone</h3>
           {
             props.languageDisplay ?
-            
+
             <ul>
               <li>Language tone describes how your writing style is perceived.</li>
               <li>
@@ -114,9 +114,9 @@ function Tweet (props) {
           :
           null
           }
-      </div>
-      <div className={props.css.breakdown}>
-        <h3 onClick={props.onSocialDisplay}>Social Tone</h3>
+      </Tile>
+      <Tile>
+        <h3 className={props.css.sectionHeader} onClick={props.onSocialDisplay}>Social Tone</h3>
         {
             props.socialDisplay ?
 
@@ -185,13 +185,13 @@ function Tweet (props) {
           :
           null
           }
-      </div>
+      </Tile>
 
     </div>
     )
   } else {
     return (
-      <div>No tweets yet</div>
+      <Tile>Please enter your Twitter handle above and press <em>Submit</em>.</Tile>
     )
   }
 }

@@ -8,8 +8,6 @@ unirest.get('https://theysaidso.p.mashape.com/quote?category=sanity')
 .end(function (result) {
   console.log(result.body);
   fs.writeFile(__dirname + '/quote.json', JSON.stringify(result.body), function(err) {
-    if (err){
-      console.error('There was an error writing to disk', err);
-    }
+    if (err) console.error('There was an error writing to disk', err);
   });
 });

@@ -5,6 +5,8 @@ var profileReducer = require('./profileReducer');
 var surveyReducer = require('./surveyReducer');
 var twitReducer = require('./twitReducer');
 var containerReducer = require('./containerReducer');
+var modalReducer = require('./modalReducer');
+var homeReducer = require('./homeReducer');
 
 var actions = require('../actions/actions');
 
@@ -13,5 +15,7 @@ exports.rootReducer =  combineReducers({
   authReducer: authReducer,
   surveyReducer: surveyReducer,
   twitReducer: twitReducer,
-  containerReducer: containerReducer
+  containerReducer: containerReducer,
+  modalReducer: modalReducer,
+  homeReducer: homeReducer
 });
