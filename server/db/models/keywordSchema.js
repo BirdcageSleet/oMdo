@@ -5,6 +5,7 @@ var db = require('../config');
 var KeywordSchema = new mongoose.Schema({
  keyword: String,
  userScores: [Number],
+ docScores: [Number],
  oMdoScores: [Number],
  relevance: [Number],
  field: String,
