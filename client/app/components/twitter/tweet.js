@@ -15,7 +15,7 @@ function Tweet (props) {
           <BarChart data={format(props.tones)} options={props.chartOptions} width='400' height='290' />
       </Tile>
       <Tile>
-      <h3 onClick={props.onEmotionDisplay}>Emotional Tone</h3>
+      <h3 className={props.css.toneHeader} onClick={props.onEmotionDisplay}>Emotional Tone</h3>
           {
             props.emotionDisplay ?
 
