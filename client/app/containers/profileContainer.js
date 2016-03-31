@@ -7,34 +7,42 @@ var homeActions = require('../actions/homeActions');
 var Container = require('./allPurposeContainer');
 var Greeting = require('../components/greeting');
 var Diary = require('../components/profile/diary');
+var Tile = require('../components/tile');
 var Visualization = require('../components/profile/visualization');
 var Journal = require('../components/profile/journal');
 
 var ProfileContainer = React.createClass({
   propTypes: {
     username: PropTypes.string,
-    surveys: PropTypes.array
+    surveys: PropTypes.array,
+    hideEntry: PropTypes.bool
   },
+  hideEntry: true,
   componentWillMount: function() {
     this.props.actions.checkAuth();
     this.props.actions.loadSurveys();
   },
-  handleRevealDiary: function(id) {
-    if(this.props.entryIds[id]) {
-      this.props.actions.closeDiary(id);
+  handleRevealDiary: function() {
+    if(this.hideEntry) {
+      this.hideEntry = false;
     } else {
-      this.props.actions.openDiary(id);
+      this.hideEntry = true;
     }
   },
   render: function() {
     return (
      this.props.location.pathname === '/summary' ?
-      <div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>
+      <Tile><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></Tile>
       :
-      <div><Journal
+      <Tile>
+        <Journal
             entries={this.props.surveys}
             text='Reflect on Your Entries'
-          /></div>
+            onRevealDiary={this.handleRevealDiary}
+            hideEntry={this.hideEntry}
+          />
+        </Container>
+      </TIle>
     )
   }
 });
@@ -44,8 +52,7 @@ function mapStateToProps(state, ownProps) {
     username: state.authReducer.username,
     surveys: state.profileReducer.surveys,
     isLoading: state.profileReducer.isLoading,
-    isLoggedIn: state.authReducer.isLoggedIn,
-    entryIds: state.profileReducer.entryIds
+    isLoggedIn: state.authReducer.isLoggedIn
   }
 };
 
