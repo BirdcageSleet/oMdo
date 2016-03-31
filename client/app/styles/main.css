@@ -12,6 +12,7 @@ html {
 */  font-family: "Quicksand", sans-serif;  
   line-height: 1.4em;
   background-color: #eaeced;
+  text-align: center;
 }
 
 body {
@@ -26,6 +27,7 @@ p {
 
 ul {
   list-style-type: none;
+  padding-left: 0;
 }
 
 li {
@@ -55,17 +57,19 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .navItem {
+  vertical-align: middle;
+  padding-top: 15px;
   color: #fff;
-  padding: 3px 3px;
-  margin: 3px 5px;
   display: inline-block;
+  height: 100%;
+  width: 100%;
   font-size: 18px;
   text-decoration: none;
-  /*float: left;*/
 }
 
 .navItem:hover {
   color: #b8d8d8;
+  background-color:;
   text-decoration: underline;
   font-weight: 500;
 }
@@ -85,16 +89,19 @@ input[type=range]::-webkit-slider-thumb {
 .submit, .submitForm {
   width: 100px;
   padding: 5px;
-  margin-left: 5%;
   color: white;
   font-size: 20px;
   color: #586994;
   background-color: #7A9E9F;
   cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  transition: all 1s;
 }
 
 .submit:hover, .submitForm:hover {
   background-color: #B8D8D8;
+  transition: all 2s;
 }
 
 .form button {
@@ -125,7 +132,7 @@ input[type=range]::-webkit-slider-thumb {
   background-color: #4F6367;
   color: white;
   text-align: center;
-  margin-left: 45%;
+  display: inline-block;
 }
 
 .footer {
@@ -140,14 +147,16 @@ input[type=range]::-webkit-slider-thumb {
 
 .year {
   position: absolute;
-  bottom: 55px;
-  right: 50%;
+  bottom: 65px;
+  right: 49.5%;
   display: inline-block;
 }
 
 .footerLogo {
-  position: absolute;
-  right: 47%;
+/*  position: absolute;
+  right: 42%;*/
+  margin-right: 5px;
+  margin-top: 75px;
   bottom: 80px;
   vertical-align: middle;
 }

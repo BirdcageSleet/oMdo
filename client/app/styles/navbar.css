@@ -25,7 +25,7 @@
   /*vertical-align: middle;*/
   display: inline-block;
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0; bottom: 0; left: 13px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -42,11 +42,17 @@
   display: inline-block;
   padding: 15px 15px 15px 15px;
   background-color: #24343d;
+  transition: all 2s;
+}
+
+.imageHolder:hover {
+  background-color: #c0d6e4;
+  transition: all 4s;
 }
 
 .linkHolder {
   position: absolute;
-  right: 100px; bottom: 0; top: 0;
+  right: 130px; bottom: 0; top: 0;
 /*  text-align: center;*/
   display: inline-block;
 
@@ -60,18 +66,45 @@
 }
 
 .navItem {
-  vertical-align: bottom;
+  vertical-align: middle;
   padding-top: 15px;
   color: #fff;
   display: inline-block;
   height: 100%;
-  width: 20%;
+  width: 25%;
   font-size: 18px;
   text-decoration: none;
 }
 
 .navItem:active{
   background-color: white;
+}
+
+.navItemText {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.navItemText:hover {
+  color: ;
+}
+
+.navItemSummary {
+  composes: navItemText;
+}
+
+.navItemMeditations {
+  margin-top: 30px;
+  composes: navItemText;  
+}
+
+.navItemJournal {
+  margin-top: 30px;
+  composes: navItemText;  
+}
+
+.navItemTwit {
+  composes: navItemText;  
 }
 
 .summary{
@@ -99,10 +132,17 @@
   text-decoration: none;
   position: absolute;
   top: 0; bottom: 0; right: 0;
+  transition: all 2s;
+}
+
+.logout:hover {
+  background-color: #c0d6e4;
+  transition: all 4s;
 }
 
 .navItem:hover {
   color: #b8d8d8;
+  background-color: white;
   text-decoration: underline;
   font-weight: 500;
 }

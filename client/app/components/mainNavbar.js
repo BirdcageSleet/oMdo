@@ -18,10 +18,10 @@ function Navbar(props) {
       <div className={props.css.navButtonContainer}>
       <div className={props.css.linkHolder}>
         {props.children}
-        <Link className={props.css.summary} to='/summary' tabIndex='120'> 7-Day Summary </Link>
-        <Link className={props.css.journal} to='/journal' tabIndex='111'> Journal </Link>
-        <Link className={props.css.meditations} to='/meditations' tabIndex='110'> Daily Survey </Link>
-        <Link className={props.css.twit} to='/twit' tabIndex='100'> Analyze Your Twitter Feed </Link>
+        <Link className={props.css.summary} to='/summary' tabIndex='120'><div className={props.css.navItemSummary}> 7-Day Summary </div></Link>
+        <Link className={props.css.journal} to='/journal' tabIndex='111'><div className={props.css.navItemJournal}>  Journal </div></Link>
+        <Link className={props.css.meditations} to='/meditations' tabIndex='110'><div className={props.css.navItemMeditations}>  Daily Survey </div></Link>
+        <Link className={props.css.twit} to='/twit' tabIndex='100'><div className={props.css.navItemTwit}>  Analyze Your Twitter Feed </div></Link>
       </div>
       <Link className={props.css.logout} to='/signin' tabIndex='130' onClick={props.onSignOut}> Log Out </Link>
       </div>
