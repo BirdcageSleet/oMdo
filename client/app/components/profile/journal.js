@@ -5,7 +5,6 @@ var css = require('../../styles/tile.css');
 var Tile = require('../tile');
 
 function Journal(props) {
-  console.log('journal children ', this.props);
   return(
     <div>
       {props.entries.reverse().map(function(entry, i) {
