@@ -1,4 +1,4 @@
-set :branch, 'styling'
+set :branch, 'staging'
 set :application, 'skynet'
 set :repo_url, 'git@github.com:jsoo1/oMdo.git'
 set :deploy_to, '/var/www/skynet'
