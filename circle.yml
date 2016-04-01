@@ -5,7 +5,7 @@ machine:
     version: 5.8.0
 deployment:
   production:
-    branch: staging
+    branch: master
     commands:
       - gem install capistrano
       - cap production deploy
