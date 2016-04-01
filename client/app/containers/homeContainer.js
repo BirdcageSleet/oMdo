@@ -1,41 +1,35 @@
 var React = require('react');
+var Greeting = require('../components/greeting');
+var Container = require('./allPurposeContainer');
 var Home = require('../components/home');
+var connect = require('react-redux').connect;
+var bindActionCreators = require('redux').bindActionCreators;
+var homeActions = require('../actions/homeActions');
+var QuotePopUp = require('./modalContainer');
 
 var HomeContainer = React.createClass({
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
-  },
-  getInitialState: function() {
-    return {
-      username: this.props.location.state.username
-    }
-  },
-  handleSeeProfile: function(event) {
-    event.preventDefault();
-    this.context.router.push({
-      pathname: '/user',
-      state: {
-        username: this.state.username
-      }
-    });
-  },
-  handleTakeSurvey: function(event) {
-    event.preventDefault();
-    this.context.router.push({
-      pathname: '/profile',
-      state: {
-        username: this.state.username
-      }
-    });
+  componentWillMount: function() {
+    this.props.actions.checkAuth();
+    this.props.actions.fetchQuote();
   },
   render: function() {
     return (
-      <Home
-        username={this.state.username}
-        onTakeSurvey={this.handleTakeSurvey}
-        onSeeProfile={this.handleSeeProfile}/>
+      <div>
+        <QuotePopUp text='Tips!' {...this.props} />
+        <Greeting text='oMdo Welcomes You' username={this.props.username} location={this.props.location.pathname} />
+      </div>
     )
   }
 });
 
-module.exports = HomeContainer;
+function mapStateToProps(state, ownProps) {
+  return Object.assign({}, state.authReducer, state.homeReducer);
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(homeActions, dispatch)
+  };
+};
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

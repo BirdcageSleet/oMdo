@@ -1,0 +1,71 @@
+@import "./config.css";
+
+.root {
+  text-align: left;
+  margin: 0;
+  color: #424B54;
+  width: 100%;
+}
+
+.headers {
+  color: #EAEAEE;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.text {
+  padding: 0 15px;
+  color: #EAEAEE;
+}
+
+.team {
+  width: 100%;
+  color: #586994;
+  margin: 0;
+  background-color:#FFFFFF;
+}
+
+.team .headers {
+  color: white;
+}
+
+table {
+  position: relative;
+  left: 12.5%;
+  width: 75%;
+  padding: 0;
+  margin: 0;
+}
+
+.person {
+  list-style-type: none;
+  position: relative;
+}
+
+.person img {
+  border: visible;
+  border-type: solid;
+  border-width: 2px;
+  border-color: black;
+  margin: 5px 5px;
+  padding: 0;
+}
+
+.name {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.name h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin: 0 0;
+  padding: 0;
+}
+
+.list {
+  padding: 0;
+}

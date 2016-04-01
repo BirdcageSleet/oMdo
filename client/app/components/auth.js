@@ -1,35 +1,46 @@
 var React = require('react');
-var PropTypes = require('react').PropTypes;
+var Form = require('./form');
+var styleable = require('react-styleable').default;
+var css = require('../styles/auth.css');
+var Link = require('react-router').Link;
 
-var Auth = function(props) {
+function Auth(props) {
   return (
-    <div>
-      <form onSubmit={props.onSubmit}>
-        <input
-          type="text"
-          name="username"
-          onChange={props.onUpdateUsername}
-          value={props.username}
-          placeholder="username" />
-        <input
-          type="text"
-          onChange={props.onUpdatePassword}
-          value={props.password}
-          placeholder="password"/>
-        <button type="submit">{props.text}</button>
-      </form>
+    <div className={props.css.root}>
+      <Form
+        formClassName={props.css.form}
+        buttonClassName={props.css.submit}
+        onSubmit={props.onSubmit}
+        text={props.text}
+        pathname={props.pathname}
+        authReroute={props.css.authReroute}
+        authLink={props.css.authLink}
+        >
+        
+        <div>
+          <input
+            tabIndex='1'
+            label='username'
+            className={props.css.input}
+            type='text'
+            placeholder='username'
+            onChange={props.onUpdateUsername}
+            />
+        </div>
+        <div>
+          <input
+            tabIndex='20'
+            label='password'
+            className={props.css.input}
+            type='password'
+            name='password'
+            placeholder='password'
+            onChange={props.onUpdatePassword}
+            />
+        </div>
+      </Form>
     </div>
   )
 };
 
-
-Auth.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  onUpdateUsername: PropTypes.func.isRequired,
-  onUpdatePassword: PropTypes.func.isRequired,
-  text: PropTypes.string,
-  username: PropTypes.string,
-  password: PropTypes.string
-};
-
-module.exports = Auth;
+module.exports = styleable(css)(Auth);

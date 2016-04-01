@@ -1,0 +1,13 @@
+@import "./config.css";
+
+.root {
+
+}
+
+.diary {
+  list-style-type: none;
+}
+
+.radarChart {
+  margin-left: 20%;
+}
