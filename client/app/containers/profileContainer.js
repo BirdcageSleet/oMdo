@@ -24,9 +24,9 @@ var ProfileContainer = React.createClass({
     return (
       this.props.location.pathname === '/summary' ?
         <div><Diary text='Reflect on Your Last 7 Days' surveys={this.props.surveys} /></div>
-        : 
+        :
         <div>
-          <Journal 
+          <Journal
             entries={this.props.surveys}
             text='Reflect on Your Entries'
             onRevealDiary={this.onRevealDiary}

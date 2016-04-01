@@ -1,3 +1,4 @@
+
 var User = require('../db/models/userSchema.js');
 var Survey = require('../db/models/surveySchema.js');
 var Keyword = require('../db/models/keywordSchema.js');
@@ -82,9 +83,9 @@ module.exports = {
           }
 
           var parsed = JSON.parse(req.body.output);
-          var keywords = {'Event': parsed.eventKeywords.keywords, 'Sleep': parsed.sleepKeywords.keywords, 'Mood': parsed.moodKeywords.keywords}; 
+          var keywords = {'Event': parsed.eventKeywords.keywords, 'Sleep': parsed.sleepKeywords.keywords, 'Mood': parsed.moodKeywords.keywords};
           var sentiments = {'Event': parsed.eventSentiments, 'Sleep': parsed.sleepSentiments, 'Mood': parsed.moodSentiments};
-          
+
 
           _.each(keywords, function(keywordArray, key){
             keywordArray.forEach(function (aKeyword) {
@@ -104,7 +105,7 @@ module.exports = {
                   }
                   return create(newKeyword)
                 } else {
-                  Keyword.findOneAndUpdate({keyword: aKeyword.text, field: key}, 
+                  Keyword.findOneAndUpdate({keyword: aKeyword.text, field: key},
                     {'$push' : {oMdoScores: aKeyword.sentiment.score, docScores: sentiments[key].docSentiment.score, relevance: aKeyword.relevance}},
                     {safe: true, upsert: true},
                     function (err, model) {
@@ -116,7 +117,7 @@ module.exports = {
               });
             });
           });
-          
+
           newScore = {
             sleepScore: sentiments.Sleep.docSentiment.score,
             moodScore: sentiments.Mood.docSentiment.score,
@@ -127,7 +128,7 @@ module.exports = {
             survey: survey,
             createdBy: foundUser,
           }
-          
+
           createScore(newScore);
 
           foundUser.surveys.push(survey);

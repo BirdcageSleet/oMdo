@@ -24,7 +24,7 @@
 }
 
 button {
-  
+
   margin-bottom: 30px;
   font-size: 20px;
   padding: 10px 10px;
@@ -42,7 +42,6 @@ button:hover {
 
 input[type=range] {
   width: 55%;
-  /*height: 5px;*/
   background: #71808E;
   border: none;
   border-radius: 3px;
@@ -52,7 +51,6 @@ input[type=range]::-webkit-slider-thumb {
   border: none;
   height: 16px;
   width: 16px;
-  /*border-radius: 50%;*/
   background: #ED6A5A;
   margin-top: -4px;
 }
@@ -103,9 +101,6 @@ textarea:focus {
   margin: 1% 17.5%;
 }
 
-.radioList {
-}
-
 .radioList li {
   display: inline-block;
 }
@@ -114,10 +109,6 @@ textarea:focus {
   text-align: left;
 }
 
-.radarChart {
-}
-
 .summaryText {
   text-align: left;
 }
-

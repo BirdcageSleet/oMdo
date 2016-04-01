@@ -1,4 +1,4 @@
-set :branch, 'styling'
+set :branch, 'master'
 set :application, 'skynet'
 set :repo_url, 'git@github.com:BirdcageSleet/oMdo.git'
 set :deploy_to, '/var/www/skynet'

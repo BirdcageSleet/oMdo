@@ -8,18 +8,18 @@ function JournalEntry(props) {
     return (
       <Tile>
           <h2 onClick={props.onRevealDiary}>{new Date(props.entry.createdOn).toLocaleString()}</h2>
-          
+
           {
             props.hideEntry ?
             <ul>
               <li>
                 <h3>How were you feeling?</h3>
-                  <p>On a scale of 1 to 5, where 1 is depressed and 5 is overjoyed, 
+                  <p>On a scale of 1 to 5, where 1 is depressed and 5 is overjoyed,
                   your feeling rating was {props.entry.feeling}.</p>
               </li>
               <li>
                 <h3>What was your anxiety level?</h3>
-                  <p>On a scale of 1 to 5, where 1 is panicky and 5 is not at all anxious, you rated 
+                  <p>On a scale of 1 to 5, where 1 is panicky and 5 is not at all anxious, you rated
                   your anxiety level a {props.entry.anxiety}.</p>
               </li>
               <li>
@@ -43,8 +43,8 @@ function JournalEntry(props) {
                       <h3>This is what you said about your sleep.</h3>
                         <p>{props.entry.sleepElaborate}</p>
                     </li>
-                  : 
-                  null          
+                  :
+                  null
                 }
               <li>
                 <h3>How was your mood?</h3>
@@ -63,7 +63,7 @@ function JournalEntry(props) {
                   <p>{props.entry.moodElaborate}</p>
                 </li>
                 :
-                null          
+                null
               }
               <li>
                 <h3>Had there been any major events since your last check-in?</h3>
