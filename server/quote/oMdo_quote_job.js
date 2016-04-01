@@ -1,4 +1,5 @@
-var dotenv = require('dotenv').config();
+var path = require('path');
+var dotenv = require('dotenv').config({path: path.join(__dirname, '../../.env')});
 var unirest = require('unirest');
 var fs = require('fs');
 

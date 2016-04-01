@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'skynet'
-set :repo_url, 'git@github.com:BirdcageSleet/skynet.git'
+set :repo_url, 'git@github.com:BirdcageSleet/oMdo.git'
 set :user, 'ec2-user'
 
 namespace :deploy do
@@ -17,7 +17,7 @@ namespace :deploy do
   desc "Install node modules and build with webpack"
   task :npm_install do
     on roles(:app) do
-      execute "cd #{current_path} && npm install --production; webpack"
+      execute "cd #{current_path} && npm install --production;"
     end
   end
 

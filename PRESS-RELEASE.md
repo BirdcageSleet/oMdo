@@ -18,27 +18,49 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  
+  oMdo
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  
+  oMdo is for anyone who would like to better understand their own mood and how it affects the way they present themselves to the world, particularly on social media.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  oMdo invites users to take a moment or two each day to reflect and honestly answer a few brief questions about their mood.  oMdo uses this data to provide a big picture of the user's mood over time, helping the user recognize patterns and trends, as well as the factors that drive them.  oMdo also provides detailed tone analysis of a user's 25 most recent tweets to help the user understand how his or her tweets are being perceived.
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  Mood is complex and plays an enormous role in both our personal and social well-being.  Too often, though, we overlook our moods, even as we struggle with their effects on our lives.  Asking, "How are you," has become social convention; the response, little more than a reflex.  But what if we each stoppped and took a few moments each day to really reflect on how we're feeling?  oMdo not only provides the means (and excuse) for this self-reflection, but it magnifies these reflections, providing an opportunity to see not just moments but a week of the user's moods.  This level of insight empowers users to make meaningful changes to the way they feel and the way they are perceived.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  oMdo provides the tools to set the user up for success, but the user is the key.  We take the user's insights from the survey and display the results in a way that helps the user see the patterns.  If the user wants to dig deeper, it's just a matter of revisiting their insights in the Diary.  Our analysis of the user's tweets can tell the user a lot about how he or she is being perceived, but it's up to the user to change these perceptions.  oMdo aims to help users take control of their moods, and showing them they have the power to take that control is a crucial first step.
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  "Mood is a fleeting state of being that can be forgotten and overlooked in daily life. Discovering the causes of highs and lows requires insight into the habits of one’s self. A lack of sleep, poor diet, and major events can be a cause or an effect of changes in mood. Tracking such habits and events enables one to take a difficult step back to see the ‘big picture’ of mood and the patterns that go into its creation."
+  - Mike Frazier, Product Owner (from Product Summary)
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  Getting started is easy.  Just create a username and password, and you're ready to fill out your first survey, which only takes a few minutes.  After a few days of surveys, you'll be able to track your moods.  You can also have your most recent 25 tweets analyzed at any time.
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+  "I was skeptical at first, but oMdo helped me recognize patterns I didn't realize I was repeating.  With just a few changes, I was able to see a big difference in the way I felt and got along with others.  I even enjoyed the surveys.  It's great to have a few moments each day... just to get my moods in order."
+  - A Real Customer 
+
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+  We hope this introduction has been helpful and that you will be as excited about oMdo as we are.  The best way to experience the benefits of oMdo, though, is just to give it a try.  Everyone can use a few moments each day to reflect, and we are confident that those few moments will be just the first step on your road to a better mood.
+
+  Let oMdo help you get your moods in order!

@@ -2,6 +2,7 @@ var React = require('react');
 var JournalEntry = require('./journalEntry');
 var styleable = require('react-styleable').default;
 var css = require('../../styles/tile.css');
+var Tile = require('../tile');
 
 function Journal(props) {
   return(
@@ -11,11 +12,13 @@ function Journal(props) {
           <JournalEntry
             entry={entry}
             key={i}
+            onRevealDiary={props.onRevealDiary}
+            hideEntry={props.hideEntry}
           />
         )
       })}
     </div>
   );
-}
+};
 
 module.exports = styleable(css)(Journal);

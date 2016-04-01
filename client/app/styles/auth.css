@@ -1,11 +1,11 @@
 @import "./config.css";
 
 .root {
-  background-image: url('../../assets/beachfog.jpg');
-  background-size: cover;
-  padding: 10% 25% 25% 25%;
-  height: 85%;
+  background-color: #eaeced;
+  padding: 5% 25% 5% 25%;
+  height: 100%;
   width: 100%;
+  text-align: center;
 }
 
 .root img {
@@ -13,29 +13,21 @@
 }
 
 .submit {
-  width: 70%;
-  font-weight: 10;
-  font-size: 2%;
+  width: 90%;
   padding: 5px;
-  margin: 5px;
+  margin-left: 5%;
   color: white;
   font-size: 20px;
-  color: #283D3B;
-  background-color: white;
-  border: visible;
-  border-width: 1px;
-  border-color: white;
-  border-radius: 15px;
-  border-style: solid;
+  /*color: #586994;*/
+  background-color: #7A9E9F;
   cursor: pointer;
 }
 
 .submit:hover {
-  background-color: #EDDDD4;
-  color: #424B54;
+  background-color: #B8D8D8;
 }
 
-.label {
+/*.label {
   color: #ED6A5;
   border: visible;
   border-width: 1px;
@@ -43,32 +35,42 @@
   border-radius: 15px;
   color: #424B54;
   background-color: #fff;
-}
+}*/
 
 .form {
-  box-shadow: 5px 4px 5px #574A40;
+  text-align:center;
   border-style: solid;
   opacity: 1;
-  background-color: #5CA4A9;
-  border-radius: 15px;
   border: visible;
   border-width: 2px;
-  border-color: white;
-  padding: 15px;
-  margin: 10% 25%;
+  border-color: #6c7a82;
+  width: 300px;
+  height: 300px;
+  padding-top: 50px;
+  margin-left: 20%;
 }
 
-form {
-  padding: 0;
-  margin: 0;
-}
+/*form {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}*/
 
 .input {
-  border-style: solid;
-  border: none;
-  border-width: 1px;
-  border-color: #283D3B;
   padding: 3px 3px;
   margin: 5px;
-  width: 100%;
+  width: 90%;
+}
+
+/*h3.authReroute {
+  color: #ffffff;
+<<<<<<< 0d464154dbe99bf1e630ce7783797077853351ec
+}
+=======
+}*/
+
+a {
+  color: #87D68D;
 }

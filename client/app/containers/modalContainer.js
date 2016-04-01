@@ -13,17 +13,20 @@ var customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    color                 : 'black'
+    color                 : '#586994'
   }
 };
 
 
 var QuotePopUp = React.createClass({
+  
   render: function() {
     return (
       <div>
         <Tile>
-          <button onClick={this.props.actions.toggleModal}>Tip of The Day!</button>
+          <div onClick={this.props.actions.toggleModal} style={{cursor: "pointer",color: "white",
+  fontSize: 20+"px",
+  backgroundColor: "#7A9E9F", textAlign: 'center'}}>Tip of The Day!</div>
         </Tile>
         <Modal
           isOpen={this.props.modalIsOpen}
@@ -31,9 +34,11 @@ var QuotePopUp = React.createClass({
           style={customStyles} >
 
           <h2>Hello</h2>
-          <button onClick={this.props.actions.toggleModal}>close</button>
           <pre>{JSON.stringify(this.props.quote.quote)}</pre>
           <pre>{JSON.stringify(this.props.quote.author)}</pre>
+          <div onClick={this.props.actions.toggleModal} style={{cursor: "pointer",color: "white",
+  fontSize: 20+"px",
+  backgroundColor: "#7A9E9F", textAlign: 'center'}}>Close</div>
         </Modal>
       </div>
     );

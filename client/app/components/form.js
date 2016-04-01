@@ -9,19 +9,19 @@ function Form (props) {
       <div className={props.formClassName || ''}>
         <form>
           {props.children}
-          <button className={props.buttonClassName || ''} onClick={props.onSubmit}>{props.text}</button>
+          <div className={props.css.submitForm || ''} onClick={props.onSubmit}>{props.text}</div>
         </form>
         {
             props.pathname === '/signin' ?
                 <div>
-                    New User? <Link to='/signup'>Sign Up Here</Link>
+                    <h3 className={props.authReroute}>New User? <Link to='/signup' className={props.authLink}>Sign Up Here</Link></h3>
                 </div>
             : null
         }
         {
             props.pathname === '/signup' ?
                 <div>
-                    Already signed up? <Link to='/signin'>Sign In Here</Link>
+                    <h3 className={props.authReroute}>Already signed up? <Link to='/signin' className={props.authLink}>Sign In Here</Link></h3>
                 </div>
             : null
         }

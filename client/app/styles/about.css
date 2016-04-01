@@ -8,20 +8,21 @@
 }
 
 .headers {
-  color: #676e76;
+  color: #EAEAEE;
   text-align: center;
   padding-top: 15px;
 }
 
 .text {
   padding: 0 15px;
+  color: #EAEAEE;
 }
 
 .team {
   width: 100%;
-  color: white;
+  color: #586994;
   margin: 0;
-  background-color: #283D3B;
+  background-color:#FFFFFF;
 }
 
 .team .headers {
@@ -38,12 +39,10 @@ table {
 
 .person {
   list-style-type: none;
-  text-align: center;
   position: relative;
 }
 
 .person img {
-  border-radius: 50%;
   border: visible;
   border-type: solid;
   border-width: 2px;
@@ -53,7 +52,6 @@ table {
 }
 
 .name {
-  text-align: center;
   margin: 0 0;
   padding: 0 0;
 }
@@ -64,9 +62,8 @@ table {
 }
 
 .title {
-  text-align: center;
   margin: 0 0;
-  pading: 0;
+  padding: 0;
 }
 
 .list {

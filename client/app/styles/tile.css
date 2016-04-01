@@ -1,24 +1,35 @@
 @import "./config.css";
 
 .root {
-  box-shadow: 5px 4px 5px #424B54;
-  background-color: white;
-  color: #424B54;
+  background-color: #c0d6e4;
+  color: #272d32;
   width: 65%;
   padding: 5px 5px 5px 10px;
   margin: 1% 17.5%;
+  border-style: solid;
+  border-color: #e5eef4;
+  border-width: 5px;
+}
+
+.submit {
+  width: 90%;
+  padding: 5px;
+  margin-left: 5%;
+  margin-bottom: 10%;
+  color: white;
+  font-size: 20px;
+  color: #586994;
+  background-color: #7A9E9F;
+  cursor: pointer;
 }
 
 button {
-  box-shadow: 5px 4px 5px #424B54;
+  
   margin-bottom: 30px;
   font-size: 20px;
   padding: 10px 10px;
-  border: visible;
   border-style: solid;
   border-color: white;
-  border-radius: 15px;
-  background-color: white;
 }
 
 button:hover {
@@ -28,9 +39,10 @@ button:hover {
   border-color: #283D3B;
 }
 
+
 input[type=range] {
-  width: 85%;
-  height: 5px;
+  width: 55%;
+  /*height: 5px;*/
   background: #71808E;
   border: none;
   border-radius: 3px;
@@ -40,7 +52,7 @@ input[type=range]::-webkit-slider-thumb {
   border: none;
   height: 16px;
   width: 16px;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   background: #ED6A5A;
   margin-top: -4px;
 }
@@ -75,6 +87,7 @@ option {
 
 textarea {
   border: solid 1px;
+  border-color: #e5eef4;
   resize: none;
   width: 90%
 }
@@ -88,18 +101,23 @@ textarea:focus {
   width: 65%;
   padding: 5px 5px 5px 5px;
   margin: 1% 17.5%;
-  box-shadow: 5px 4px 5px #424B54;
 }
 
 .radioList {
-  padding-left: 0;
 }
 
 .radioList li {
-  margin: 0 5px;
   display: inline-block;
 }
 
 .journalList {
   text-align: left;
 }
+
+.radarChart {
+}
+
+.summaryText {
+  text-align: left;
+}
+

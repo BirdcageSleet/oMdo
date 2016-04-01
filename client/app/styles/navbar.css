@@ -1,16 +1,33 @@
 @import "./config.css";
 
 .root {
-  box-shadow: 0 5px 5px grey;
   min-width: 100%;
-  height: 15%;
+  height: 90px;
   padding: 10px;
-  display: table;
-  background-color: #424B54;
+  display: inline-block;
+  background-color: #2d414d;
+  position: relative;
+  overflow: hidden;
 }
 
-img {
-  float: left;
+/*.root:after{
+  content: ".";
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    overflow: auto;
+}*/
+
+.headerLogo {
+  /*float: left;*/
+  /*vertical-align: middle;*/
+  display: inline-block;
+  position: absolute;
+  top: 0; bottom: 0; left: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .ul {
@@ -18,41 +35,124 @@ img {
   padding-left: 0;
 }
 
-.navItem {
-  box-shadow: 3px 2px 3px #272C31;
-  resize: inherit;
-  color: white;
-  padding: 3px 3px;
-  margin: 3px 5px;
+.imageHolder {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 180px;
   display: inline-block;
-  background-color: #ED6A5A;
-  border-style: solid;
-  border-color: white;
-  border-width: 1px;
-  font-weight: 100;
-  font-size: 20px;
+  padding: 15px 15px 15px 15px;
+  background-color: #24343d;
+  transition: all 2s;
+}
+
+.imageHolder:hover {
+  background-color: #c0d6e4;
+  transition: all 4s;
+}
+
+.linkHolder {
+  position: absolute;
+  right: 130px; bottom: 0; top: 0;
+/*  text-align: center;*/
+  display: inline-block;
+
+}
+
+.navButtonContainer {
+    display: inline-block;/*
+    margin: 0px 92px 0px 180px;*/
+    overflow: auto;
+    text-align: center;
+}
+
+.navItem {
+  vertical-align: middle;
+  padding-top: 15px;
+  color: #fff;
+  display: inline-block;
+  height: 100%;
+  width: 25%;
+  font-size: 18px;
   text-decoration: none;
-  border-radius: 15px;
+}
+
+.navItem:active{
+  background-color: white;
+}
+
+.navItemText {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.navItemText:hover {
+  color: ;
+}
+
+.navItemSummary {
+  composes: navItemText;
+}
+
+.navItemMeditations {
+  margin-top: 30px;
+  composes: navItemText;  
+}
+
+.navItemJournal {
+  margin-top: 30px;
+  composes: navItemText;  
+}
+
+.navItemTwit {
+  composes: navItemText;  
+}
+
+.summary{
+  composes: navItem;
+}
+
+.meditations{
+  composes: navItem;
+}
+
+.journal{
+  composes: navItem;
+}
+
+.twit{
+  composes: navItem;
+}
+
+.logout {
+  color: #fff;
+  background-color: #24343d;
+  padding: 35px 20px 0px 20px;
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  transition: all 2s;
+}
+
+.logout:hover {
+  background-color: #c0d6e4;
+  transition: all 4s;
 }
 
 .navItem:hover {
-  background-color: #cb2a16;
+  color: #b8d8d8;
+  background-color: white;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .signout {
   float: right;
-  box-shadow: 3px 2px 3px #272C31;
   resize: inherit;
   color: white;
   padding: 3px 3px;
   margin: 3px 5px;
   display: inline-block;
-  background-color: #ED6A5A;
-  border-style: solid;
-  border-color: white;
-  border-width: 1px;
-  font-weight: 10;
-  font-size: 14px;
   text-decoration: none;
-  border-radius: 15px;
 }

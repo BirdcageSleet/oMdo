@@ -1,7 +1,5 @@
 var React = require('react');
 var Greeting = require('../components/greeting');
-var Container = require('./allPurposeContainer');
-var Home = require('../components/home');
 var connect = require('react-redux').connect;
 var bindActionCreators = require('redux').bindActionCreators;
 var homeActions = require('../actions/homeActions');
@@ -13,12 +11,11 @@ var HomeContainer = React.createClass({
     this.props.actions.fetchQuote();
   },
   render: function() {
-    var pathname = this.props.location.pathname;
     return (
-      <Container>
-        <Greeting text='oMdo Welcomes You' username={this.props.username} />
+      <div>
         <QuotePopUp text='Tips!' {...this.props} />
-      </Container>
+        <Greeting text='oMdo Welcomes You' username={this.props.username} location={this.props.location.pathname} />
+      </div>
     )
   }
 });

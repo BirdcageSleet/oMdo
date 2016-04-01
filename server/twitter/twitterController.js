@@ -1,4 +1,5 @@
-var dotenv = require('dotenv').config();
+var path = require('path');
+var dotenv = require('dotenv').config({path: path.join(__dirname, '../../.env')});
 var Twitter = require('twitter');
 var watson = require('watson-developer-cloud');
 
@@ -19,11 +20,8 @@ var tone_analyzer = watson.tone_analyzer({
 
 module.exports = {
   fetchTweets: function(req, res) {
-    // var tweetTexts;
     var params = {screen_name: req.body.handle, count: 25};
     client.get('statuses/user_timeline', params, function(err, tweets, response) {
-      // tweets returned as []
-      // response is raw object ==> of user's entire Twitter
       if(err) {
         return new Error(err);
       }
@@ -36,12 +34,14 @@ module.exports = {
       });
 
       tone_analyzer.tone({ text: tweetBlock },
+
         function(err, tone) {
           if (err)
             console.log(err);
           else
             res.send(JSON.stringify(tone['document_tone']));
       });
+
     });
   }
 };

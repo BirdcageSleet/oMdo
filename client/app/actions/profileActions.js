@@ -1,8 +1,5 @@
 var actions = require('../actions/actions');
 var axios = require('axios');
-var dispatch = require('../store/store').dispatch;
-var browserHistory = require('react-router').browserHistory;
-
 
 module.exports = {
   surveysLoading: function() {
@@ -11,11 +8,11 @@ module.exports = {
   surveysNotLoaded: function() {
     return {type: actions.SURVEYS_NOT_LOADED};
   },
-  surveysLoaded: function(surveys) {
-    return {type: actions.SURVEYS_LOADED, surveys: surveys};
+  surveysLoaded: function(surveys, entryIds) {
+    return {type: actions.SURVEYS_LOADED, surveys: surveys, entryIds: entryIds};
   },
   loadSurveys: function() {
-    return function() {
+    return function(dispatch) {
       dispatch(module.exports.surveysLoading());
       axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
       axios.get('/user/userData')

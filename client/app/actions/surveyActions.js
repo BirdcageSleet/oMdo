@@ -1,4 +1,4 @@
-var actions = require('../actions/actions')
+var actions = require('../actions/actions');
 var axios = require('axios');
 var browserHistory = require('react-router').browserHistory;
 
@@ -12,13 +12,6 @@ module.exports = {
   surveyFailure: function() {
     return {type: actions.SURVEY_FAILURE};
   },
-  // prevQuestion: function() {
-  //   return {type: actions.PREV_QUESTION}
-  // },
-  // nextQuestion: function() {
-  //   return {type: actions.NEXT_QUESTION}
-
-  // },
   feelingChange: function(feeling) {
     return {type: actions.FEELING_CHANGE, feeling: feeling};
   },
@@ -47,14 +40,13 @@ module.exports = {
     return {type: actions.MOOD_ELABORATE_CHANGE, moodDetail: moodDetail};
   },
   submitSurvey: function(survey) {
-    axios.defaults.headers.common['x-access-token'] = window.localStorage.getItem('x-access-token');
     return function(dispatch) {
       dispatch(module.exports.surveySubmit());
       axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
-      axios.post('/user/userData', survey)
+      axios.post('/survey/surveySubmit', survey)
         .then(function(response) {
           dispatch(module.exports.surveySuccess());
-          browserHistory.push('/profile');
+          browserHistory.push('/journal');
         })
         .catch(function(error) {
           dispatch(module.exports.surveyFailure());

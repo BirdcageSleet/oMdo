@@ -1,8 +1,13 @@
 var mongoose = require('mongoose');
 var path = require('path');
-var dbURI = process.env.MONGOLAB_URI || 'mongodb://localhost/skynet';
-mongoose.connect(dbURI);
+var dotenv = require('dotenv').config({path: path.join(__dirname, '../../.env')});
+var dbURI, dbOptions;
+
+dbURI = 'mongodb://localhost/skynet'
+
+mongoose.connect(dbURI, dbOptions);
 var db = mongoose.connection;
+
 /* ===============================================
    DB Event Handlers
     ===============================================
@@ -16,13 +21,5 @@ var db = mongoose.connection;
  mongoose.connection.on('disconnected', function() {
    console.log('Mongoose disconnected');
  });
-
- // logs when user terminates app
- // process.on('SIGINIT', function() {
- //   mongoose.connection.close(function() {
- //     console.log('Mongoose disconnected through app termination');
- //     process.exit(0);
- //   });
- // });
 
 module.exports = db;

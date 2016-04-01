@@ -1,14 +1,18 @@
 * {
   box-sizing: border-box;
 }
+
+/*@font-face {
+  font-family: 'raleway light';
+  url('./fonts/Raleway-Light.tff');
+}*/
+
 html {
-  text-align: center;
-  font-family: "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", sans-serif;
-  font-size: 20px;
-  font-weight: 200;
-  color: white;
+/*  text-align: left;
+*/  font-family: "Quicksand", sans-serif;  
   line-height: 1.4em;
-  background-color: #E6EBE0;
+  background-color: #eaeced;
+  text-align: center;
 }
 
 body {
@@ -23,6 +27,7 @@ p {
 
 ul {
   list-style-type: none;
+  padding-left: 0;
 }
 
 li {
@@ -48,27 +53,25 @@ input[type=range]::-webkit-slider-thumb {
 .nav {
   margin: 1% 1%;
   display: inline-block;
+  float:left;
 }
 
 .navItem {
-  box-shadow: 3px 2px 3px #272C31;
-  resize: inherit;
-  color: white;
-  padding: 3px 3px;
-  margin: 3px 5px;
+  vertical-align: middle;
+  padding-top: 15px;
+  color: #fff;
   display: inline-block;
-  background-color: #ED6A5A;
-  border-style: solid;
-  border-color: white;
-  border-width: 1px;
-  font-weight: 10;
-  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
   text-decoration: none;
-  border-radius: 15px;
 }
 
 .navItem:hover {
-  background-color: #cb2a16;
+  color: #b8d8d8;
+  background-color:;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .contentBox {
@@ -76,23 +79,38 @@ input[type=range]::-webkit-slider-thumb {
   float: right;
 }
 
-.form {
+/*.form {
   background: transparent;
   color: #283D3B;
   padding: 0;
   width: 100%;
+}*/
+
+.submit, .submitForm {
+  width: 100px;
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+  color: #586994;
+  background-color: #7A9E9F;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  transition: all 1s;
+}
+
+.submit:hover, .submitForm:hover {
+  background-color: #B8D8D8;
+  transition: all 2s;
 }
 
 .form button {
-  box-shadow: 5px 4px 5px #424B54;
   margin-bottom: 30px;
   font-size: 20px;
   padding: 10px 10px;
   border: visible;
   border-style: solid;
   border-color: white;
-  border-radius: 15px;
-  background-color: white;
 }
 
 .form button:hover {
@@ -100,4 +118,45 @@ input[type=range]::-webkit-slider-thumb {
   color: #283D3B;
   background-color: #F5D547;
   border-color: #283D3B;
+}
+/*h3.authReroute > span{
+  color: #ffffff;
+}
+
+.authLink {
+  color: #87D68D;
+<<<<<<< 0d464154dbe99bf1e630ce7783797077853351ec
+}*/
+
+.submitForm {
+  background-color: #4F6367;
+  color: white;
+  text-align: center;
+  display: inline-block;
+}
+
+.footer {
+  margin-top: 20px;
+  height: 200px;
+  background-color: #24343d;
+  color:white;
+  text-align: center;
+  font-size: 10px;
+  position:relative;
+}
+
+.year {
+  position: absolute;
+  bottom: 65px;
+  right: 49.5%;
+  display: inline-block;
+}
+
+.footerLogo {
+/*  position: absolute;
+  right: 42%;*/
+  margin-right: 5px;
+  margin-top: 75px;
+  bottom: 80px;
+  vertical-align: middle;
 }

@@ -12,7 +12,6 @@ var TwitContainer = React.createClass({
     store: React.PropTypes.object.isRequired,
     router: React.PropTypes.object.isRequired
   },
-  // Adds auth but not sure if works
   componentWillMount: function () {
     this.props.actions.checkAuth();
   },

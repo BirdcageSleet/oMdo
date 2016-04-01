@@ -1,11 +1,13 @@
 @import './config.css';
 
 input[type=range] {
-  width: 85%;
+  width: 60%;
   height: 5px;
   background: #71808E;
   border: none;
   border-radius: 3px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -14,13 +16,15 @@ input[type=range]::-webkit-slider-thumb {
   width: 16px;
   border-radius: 50%;
   background: #ED6A5A;
-  margin-top: -4px;
+  /*margin-top: -4px;*/
 }
 
 select {
-  border: none;
+  border: solid black 1px;
   background-color: white;
   color: #424B54;
+  margin-left: 5%;
+  font-size: 18px;
 }
 
 select:checked {
@@ -34,7 +38,8 @@ option {
 }
 
  input[type=radio] {
-   padding: 0;
+   
+   padding: 0px;
    background: transparent;
    background-color: white;
    vertical-align: text-top;
@@ -45,9 +50,10 @@ option {
   }
 
 textarea {
-  border: none;
-  resize: none;
-  width: 90%
+  border: solid 1px;
+  border-color: #e5eef4;
+  width: 90%;
+  font-size: 18px;
 }
 
 .textQuestion {
@@ -55,14 +61,56 @@ textarea {
   width: 65%;
   padding: 5px 5px 5px 5px;
   margin: 1% 17.5%;
-  box-shadow: 5px 4px 5px #424B54;
+  text-align: center;
+
 }
 
 .radioList {
-  padding-left: 0;
+
 }
 
 .radioList li {
-  margin: 0 5px;
   display: inline-block;
+}
+
+/*.submit,*/ .submitForm {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 20px;
+  background-color: #7A9E9F;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.inputBox {
+  text-align: center;
+  margin: 5px 0px 10px 0px;
+  display: inline-block;
+}
+
+/*.submit:hover,*/ .submitForm:hover {
+  background-color: #B8D8D8;
+}
+
+.twitterHolder {
+ text-align: center; 
+}
+
+.twitterField {
+  
+}
+.twitterField > input {
+  width: 300px;
+  font-size: 18px;
+}
+
+.textBox {
+  text-align: center;
+}
+
+.slider {
+  text-align: center;
 }

@@ -14,7 +14,8 @@ function profileReducer(state, action) {
     case actions.SURVEYS_LOADED:
       return Object.assign({}, state, {
         isLoading: false,
-        surveys: action.surveys
+        surveys: action.surveys,
+        entryIds: action.entryIds
       });
     case actions.SURVEYS_NOT_LOADED:
       return Object.assign({}, state, {
