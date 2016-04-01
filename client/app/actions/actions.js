@@ -10,10 +10,6 @@ module.exports = {
   NOT_AUTHORIZED: 'NOT_AUTHORIZED',
   SIGN_OUT: 'SIGN_OUT',
 
-  // Nested view nav actions
-  SWITCHING_VIEW: 'SWITCHING_VIEW',
-  SWITCHED_VIEW: 'SWITCHED_VIEW',
-
   // modal actions
   TOGGLE_MODAL: 'TOGGLE_MODAL',
 

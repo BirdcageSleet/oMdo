@@ -30,9 +30,7 @@ describe('Test auth routes and controllers', function() {
           .end(function(err,res) {
             if (err) return done(err);
             expect(res.body.token).to.be.an('string');
-            mockgoose.reset(function() {
-              done();
-            });
+            done();
         });
       });
       it('should not create a user if one with the same name already exists', function(done) {

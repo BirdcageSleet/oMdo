@@ -1,6 +1,5 @@
 var React = require('react');
 var JournalEntry = require('./journalEntry');
-// var JournalEntryContent = require('./journalEntryContent');
 var styleable = require('react-styleable').default;
 var css = require('../../styles/tile.css');
 var Tile = require('../tile');

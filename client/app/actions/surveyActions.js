@@ -1,4 +1,4 @@
-var actions = require('../actions/actions')
+var actions = require('../actions/actions');
 var axios = require('axios');
 var browserHistory = require('react-router').browserHistory;
 
@@ -12,13 +12,6 @@ module.exports = {
   surveyFailure: function() {
     return {type: actions.SURVEY_FAILURE};
   },
-  // prevQuestion: function() {
-  //   return {type: actions.PREV_QUESTION}
-  // },
-  // nextQuestion: function() {
-  //   return {type: actions.NEXT_QUESTION}
-
-  // },
   feelingChange: function(feeling) {
     return {type: actions.FEELING_CHANGE, feeling: feeling};
   },

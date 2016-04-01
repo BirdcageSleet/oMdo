@@ -138,9 +138,6 @@ module.exports = {
           if (err) {
             next(new Error('There is an error in posting the survey: ', err));
           }
-          // alchemyapi.sentiment('text', survey.eventElaborate, {}, function(response){
-          //   // console.log(JSON.stringify(response, null, 4));
-          // })
           foundUser.surveys.push(survey);
           foundUser.save()
             .then(function(result) {

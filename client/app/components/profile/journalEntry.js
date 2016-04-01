@@ -3,10 +3,6 @@ var styleable = require('react-styleable').default;
 var css = require('../../styles/tile.css');
 var Tile = require('../tile');
 var Form = require('../form');
-// var JournalEntryContent = require('./journalEntryContent');
-
-
-var hideEntry = true;
 
 function JournalEntry(props) {
     return (

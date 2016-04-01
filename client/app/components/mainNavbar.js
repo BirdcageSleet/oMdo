@@ -1,16 +1,12 @@
 var React = require('react');
 var Link = require('react-router').Link;
-var Header = require('./header');
-var styleable = require('react-styleable').default
+var styleable = require('react-styleable').default;
 var css = require('../styles/navbar.css');
 
 function Navbar(props) {
-  console.log('HIIZME', props)
   return !props.isLoggedIn
     ? (
       <div>
-        {/*<Link className={props.css.navItem} to='/signin' tabIndex='100'> Sign In </Link>
-                <Link className={props.css.navItem} to='/signup' tabIndex='110'> Sign Up </Link>*/}
         <Link className={props.css.navItem} to='/about' tabIndex='120'> What is oMdo? </Link>
       </div>
     )
@@ -26,6 +22,6 @@ function Navbar(props) {
       <Link className={props.css.logout} to='/signin' tabIndex='130' onClick={props.onSignOut}> Log Out </Link>
       </div>
     )
-}
+};
 
 module.exports = styleable(css)(Navbar);

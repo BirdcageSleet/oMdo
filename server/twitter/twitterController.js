@@ -20,11 +20,8 @@ var tone_analyzer = watson.tone_analyzer({
 
 module.exports = {
   fetchTweets: function(req, res) {
-    // var tweetTexts;
     var params = {screen_name: req.body.handle, count: 25};
     client.get('statuses/user_timeline', params, function(err, tweets, response) {
-      // tweets returned as []
-      // response is raw object ==> of user's entire Twitter
       if(err) {
         return new Error(err);
       }

@@ -1,5 +1,4 @@
-var actions = require('./actions')
-var browserHistory = require('react-router').browserHistory;
+var actions = require('./actions');
 
 module.exports = {
   signOut: function() {

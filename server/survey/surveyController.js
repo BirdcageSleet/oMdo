@@ -13,11 +13,6 @@ var _ = require('underscore');
 
 
 module.exports = {
-  surveyTest: function(req, res, next) {
-    console.log(req.headers);
-    res.send({test: 'Feelings noted!'});
-  },
-
   postAlchemyResults: function(req, res, next) {
     var output = {};
 
@@ -59,8 +54,6 @@ module.exports = {
     function eventKeywords(req, res, output){
       alchemyapi.keywords('text', req.body.eventElaborate, { 'sentiment':1 }, function(response){
         output['eventKeywords'] = response;
-        // console.log("IM HERE", output)
-        // res.send(req.body.output);
         req.body.output = JSON.stringify(output);
         next();
       });
@@ -70,7 +63,6 @@ module.exports = {
   },
 
   postUserSurvey: function(req,res,next) {
-    // console.log('HIHIHIHIHI', req.body);
     var token = req.headers['x-access-token'];
     var create = Q.nbind(Keyword.create, Keyword);
     var createScore = Q.nbind(Score.create, Score);
@@ -88,13 +80,11 @@ module.exports = {
           if (err) {
             next(new Error('There is an error in posting the survey: ', err));
           }
-          console.log('DISDASURVEY', survey);
-          console.log('DISDAUSER', foundUser);
 
           var parsed = JSON.parse(req.body.output);
           var keywords = {'Event': parsed.eventKeywords.keywords, 'Sleep': parsed.sleepKeywords.keywords, 'Mood': parsed.moodKeywords.keywords}; 
           var sentiments = {'Event': parsed.eventSentiments, 'Sleep': parsed.sleepSentiments, 'Mood': parsed.moodSentiments};
-          // console.log(parsed.eventKeywords.keywords);
+          
 
           _.each(keywords, function(keywordArray, key){
             keywordArray.forEach(function (aKeyword) {
@@ -178,22 +168,4 @@ module.exports = {
         });
       }
     }
-
-    getUserSurveys: function(req,res,next) {
-    var token = req.headers['x-access-token'];
-    if (!token) {
-      next(new Error('No token found!'));
-    } else {
-      var user =jwt.decode(token, process.env.JWT_SECRET);
-      User.findOne({username: user.username})
-      .exec(function(err, user) {
-        if (err || result === null) next(new Error('Error finding surveys'));
-        console.log(user);
-        // Keyword.findOne({user: user})
-      })
-      .catch(function(error) {
-        next(new Error(error));
-      });
-    }
-  },
 };

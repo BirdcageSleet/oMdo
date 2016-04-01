@@ -1,7 +1,5 @@
 var React = require('react');
 var Greeting = require('../components/greeting');
-var Container = require('./allPurposeContainer');
-var Home = require('../components/home');
 var connect = require('react-redux').connect;
 var bindActionCreators = require('redux').bindActionCreators;
 var homeActions = require('../actions/homeActions');
