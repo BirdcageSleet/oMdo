@@ -24,9 +24,17 @@ var QuotePopUp = React.createClass({
     return (
       <div>
         <Tile>
-          <div onClick={this.props.actions.toggleModal} style={{cursor: "pointer",color: "white",
-  fontSize: 20+"px",
-  backgroundColor: "#7A9E9F", textAlign: 'center'}}>Tip of The Day!</div>
+          <div
+            onClick={this.props.actions.toggleModal}
+            style={{
+                cursor: "pointer",
+                color: "white",
+                fontSize: 20+"px",
+                backgroundColor: "#7A9E9F",
+                textAlign: 'center'
+            }}>
+              Tip of The Day!
+          </div>
         </Tile>
         <Modal
           isOpen={this.props.modalIsOpen}
@@ -36,9 +44,17 @@ var QuotePopUp = React.createClass({
           <h2>Hello</h2>
           <pre>{JSON.stringify(this.props.quote.quote)}</pre>
           <pre>{JSON.stringify(this.props.quote.author)}</pre>
-          <div onClick={this.props.actions.toggleModal} style={{cursor: "pointer",color: "white",
-  fontSize: 20+"px",
-  backgroundColor: "#7A9E9F", textAlign: 'center'}}>Close</div>
+          <div
+            onClick={this.props.actions.toggleModal}
+            style={{
+              cursor: "pointer",
+              color: "white",
+              fontSize: 20+"px",
+              backgroundColor: "#7A9E9F",
+              textAlign: 'center'
+            }}>
+              Close
+            </div>
         </Modal>
       </div>
     );

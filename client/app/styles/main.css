@@ -73,13 +73,6 @@ input[type=range]::-webkit-slider-thumb {
   float: right;
 }
 
-/*.form {
-  background: transparent;
-  color: #283D3B;
-  padding: 0;
-  width: 100%;
-}*/
-
 .submit, .submitForm {
   width: 100px;
   padding: 5px;
@@ -113,15 +106,6 @@ input[type=range]::-webkit-slider-thumb {
   background-color: #F5D547;
   border-color: #283D3B;
 }
-/*h3.authReroute > span{
-  color: #ffffff;
-<<<<<<< 1a6500c3e2770d5f69e1a687840ce32c84a40020
-}
-
-.authLink {
-  color: #87D68D;
-<<<<<<< 0d464154dbe99bf1e630ce7783797077853351ec
-}*/
 
 .submitForm {
   background-color: #4F6367;
@@ -148,8 +132,6 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .footerLogo {
-/*  position: absolute;
-  right: 42%;*/
   margin-right: 5px;
   margin-top: 75px;
   bottom: 80px;
